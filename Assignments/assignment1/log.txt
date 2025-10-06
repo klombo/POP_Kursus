@@ -1,0 +1,3 @@
+ChatGPT prompt history:
+
+how do you use a List.filter function inside pattern matching in fsharp?
