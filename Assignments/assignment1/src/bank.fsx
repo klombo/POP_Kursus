@@ -54,7 +54,6 @@ let addInterest (interest: float) =
   printfn "All saving accounts before interest: %A" savingAccounts
   savingAccounts
     |> List.map (fun (accID, balance) -> (accID, balance * (1.0 + interest)))
-    |> printfn "All saving accounts after interest: %A"
 
 internalTransfer "51C" "52S" 1000.0
-addInterest 0.15
+addInterest 0.15 |> printfn "All saving accounts after interest: %A"

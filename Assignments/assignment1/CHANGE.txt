@@ -1,0 +1,16 @@
+[-] B. The helper function findBalance is not discussed or reflected upon. 
+^ Det er i rapporten det skal ændres på.
+
+[?]. C. For resub: create a function that returns a new list of saving accounts with the changed balance.
+To address the feedback "For resub: create a function that returns a new list of saving accounts with the changed balance.", 
+I change the function addInterest in the file bank.fsx.
+I delete the printfn call inside the addInterest function and instead i pipe the return of the addInterest function into a print
+This is because when pimping in fsharp, it simply returns the outcome of the higher order function, in this case it is List.map
+List.map returns a new list with the the saving accounts but after interest has been applied.
+
+
+[?] B. Great reflections - try solving the uneven problem for resub!
+
+
+[-] Examples of recursive functions from the class are missing
+^Det er i rapporten det skal ændres på.
