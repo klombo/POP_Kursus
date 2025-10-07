@@ -10,7 +10,10 @@ List.map returns a new list with the the saving accounts but after interest has 
 
 
 [?] B. Great reflections - try solving the uneven problem for resub!
-
+To address the feedback "try solving the uneven problem for resub!"
+I change the function createPairs in the file groups.fsx.
+I add another pattern which checks if the list only contains three elements, in line 4 ,it then creates a pair with those three elements.
+To handle this I change the output to be a int list list, instead a list of (int * int) tuple.
 
 [-] Examples of recursive functions from the class are missing
 ^Det er i rapporten det skal ændres på.
