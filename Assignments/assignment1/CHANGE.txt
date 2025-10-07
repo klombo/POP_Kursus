@@ -4,16 +4,17 @@
 [?]. C. For resub: create a function that returns a new list of saving accounts with the changed balance.
 To address the feedback "For resub: create a function that returns a new list of saving accounts with the changed balance.", 
 I change the function addInterest in the file bank.fsx.
-I delete the printfn call inside the addInterest function and instead i pipe the return of the addInterest function into a print
+I deleted the printfn call inside the addInterest function and instead i pipe the return of the addInterest function into a print
 This is because when pimping in fsharp, it simply returns the outcome of the higher order function, in this case it is List.map
 List.map returns a new list with the the saving accounts but after interest has been applied.
-
 
 [?] B. Great reflections - try solving the uneven problem for resub!
 To address the feedback "try solving the uneven problem for resub!"
 I change the function createPairs in the file groups.fsx.
-I add another pattern which checks if the list only contains three elements, in line 4 ,it then creates a pair with those three elements.
+I add another pattern, in line 3, which checks if the list only contains three elements, it then creates a pair with those three elements.
 To handle this I change the output to be a int list list, instead a list of (int * int) tuple.
+This is because the (int * int) list can not also contain a group of three.
+This means using @ instead of :: in line 4 and using [] instead of ().
 
 [-] Examples of recursive functions from the class are missing
 ^Det er i rapporten det skal ændres på.
