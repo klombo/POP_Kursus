@@ -17,4 +17,5 @@ This is because the (int * int) list can not also contain a group of three.
 This means using @ instead of :: in line 4 and using [] instead of ().
 
 [-] Examples of recursive functions from the class are missing
-^Det er i rapporten det skal ændres på.
+To Adress the feedback "Examples of recursive functions from the class are missing"
+In 3.C i added some examples from class.
