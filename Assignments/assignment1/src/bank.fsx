@@ -25,7 +25,7 @@ let allAccounts : Account list =
       ("52S", 1200.00)
       ("32S", 122.31)]
 
-let findBalance (accountID : string) : float =
+let findBalance (accountID : string): float =
     match allAccounts |> List.filter (fun (accID, _) -> accID = accountID) with
     | [(_,balance)] -> balance
     | _ -> 0.0
@@ -47,7 +47,7 @@ let internalTransfer (recipientAccountID: string) (senderAccountID: string) (amo
     else
       printfn "This is not an internal Transfer" 
 
-let addInterest (interest: float) = 
+let addInterest (interest: float): Account list = 
   let savingAccounts = 
     allAccounts
     |> List.filter (fun (accID, _) -> accID.[accID.Length-1] =  'S')
