@@ -1,22 +1,26 @@
-[-] B. The helper function findBalance is not discussed or reflected upon. 
-^ Det er i rapporten det skal ændres på.
+To Adress the feedback "The helper function findBalance is not discussed or reflected upon."
+I changed the part in 1.B concerning the helper function findBalance.
+    - This part begins a couple of lines after the beginning of page 2 and ends a couple of lines before the end of section 1.B.
 
-[?]. C. For resub: create a function that returns a new list of saving accounts with the changed balance.
+
 To address the feedback "For resub: create a function that returns a new list of saving accounts with the changed balance.", 
 I change the function addInterest in the file bank.fsx.
-I deleted the printfn call inside the addInterest function and instead i pipe the return of the addInterest function into a print
-This is because when pimping in fsharp, it simply returns the outcome of the higher order function, in this case it is List.map
-List.map returns a new list with the the saving accounts but after interest has been applied.
-I also change the output in the reflections part of the report from unit to a Account list.
+    - I deleted the printfn call inside the addInterest function and instead i pipe the return of the addInterest function into a print
+    - This is because when pimping in fsharp, it simply returns the outcome of the higher order function, in this case it is List.map
+    - List.map returns a new list with the the saving accounts but after interest has been applied.
+I have made changes to parts of 1.C, to reflect the change in output and also the small changes in the code.
 
-[?] B. Great reflections - try solving the uneven problem for resub!
+
 To address the feedback "try solving the uneven problem for resub!"
-I change the function createPairs in the file groups.fsx.
-I add another pattern, in line 3, which checks if the list only contains three elements, it then creates a pair with those three elements.
-To handle this I change the output to be a int list list, instead a list of (int * int) tuple.
-This is because the (int * int) list can not also contain a group of three.
-This means using @ instead of :: in line 4 and using [] instead of ().
+I changed createPairs function in the file groups.fsx.
+    - I add another pattern, in line 3, which checks if the list only contains three elements, it then creates a pair with those three elements.
+    - To handle this I change the output to be a int list list, instead a list of (int * int) tuple.
+    - This is because the list of tuples (int * int) could not contain a group of three, as the expected type of each element was (int * int).
+    - This means using @ instead of :: in line 4 and using [] instead of ().
+I have made changes to the 2.A about the expected output given an list of students of uneven length.
+I have also changed the code snippet to match the code in my groups.fsx.
+I have also made a change in 2.B where i talk about the expected output with an example of only 10 students.
 
-[-] Examples of recursive functions from the class are missing
+
 To Adress the feedback "Examples of recursive functions from the class are missing"
-In 3.C i added some examples from class.
+I rewrote the 3.C section with examples of recursive functions from class.
