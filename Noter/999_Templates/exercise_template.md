@@ -2,7 +2,7 @@
 
 ### Topic: #
 
-Vscode file [[]]
+
 #### Tasks:
 
 #### 1.

@@ -28,15 +28,14 @@
               "type": "markdown",
               "state": {
                 "file": "exercise_Notes/Tues_W1_Deliberate_Practice.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Tues_W1_Deliberate_Practice"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -109,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "exercise_Notes/Tues_W1_Deliberate_Practice.md",
+                "file": "999_Templates/exercise_template.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Tues_W1_Deliberate_Practice"
+              "title": "Backlinks for exercise_template"
             }
           },
           {
@@ -183,12 +182,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "9929c5fe147cabd8",
+  "active": "70289ece61690191",
   "lastOpenFiles": [
-    "999_Templates/exercise_template.md",
     "exercise_Notes/Tues_W1_Deliberate_Practice.md",
     "999_Templates/lecture_note_template.md",
     "Lecture_Notes/Untitled.md",
+    "999_Templates/exercise_template.md",
     "exercise_Notes",
     "Lecture_Notes/Functional_Programming.md",
     "Lecture_Notes/tues_12-10-25.md",
