@@ -1,0 +1,13 @@
+{
+  "editor:save-file": [],
+  "editor:open-search": [],
+  "graph:open": [],
+  "insert-template": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
+    }
+  ]
+}

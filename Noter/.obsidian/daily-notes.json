@@ -1,0 +1,5 @@
+{
+  "format": "DD-MM-YY",
+  "template": "999Templates/Lecture_notes_{{date}}",
+  "folder": "Lecture_Notes"
+}
