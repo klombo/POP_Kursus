@@ -1,9 +1,9 @@
 # {{title}} {{date}}
 
-### Topic: 
+Topic: 
 #
 
-#### Tasks:
+#### Exercises:
 The `.fsx` file is called ``
 #### 1.
 

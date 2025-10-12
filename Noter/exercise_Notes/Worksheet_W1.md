@@ -1,8 +1,8 @@
 # Worksheet_W1 4-9-25
 
-### Topic: 
+Topic: 
 #functions/declaration #types/tuples 
-#### Tasks:
+#### Exercises:
 ##### 1. Average
 The `.fsx` file doesn't exist
 The brief description of the function avg below is that it return the average of two numbers:

@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#tuples",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -87,7 +87,6 @@
       {
         "id": "c118c8679549feab",
         "type": "tabs",
-        "dimension": 29.45736434108527,
         "children": [
           {
             "id": "1fe827048392cb52",
@@ -154,27 +153,10 @@
           }
         ],
         "currentTab": 3
-      },
-      {
-        "id": "af474a8ce9c12203",
-        "type": "tabs",
-        "dimension": 70.54263565891473,
-        "children": [
-          {
-            "id": "a7250c848010c055",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          }
-        ]
       }
     ],
     "direction": "horizontal",
-    "width": 450.5
+    "width": 389.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,8 +170,10 @@
   },
   "active": "9929c5fe147cabd8",
   "lastOpenFiles": [
-    "exercise_Notes/Worksheet_W1.md",
     "exercise_Notes/Deliberate_Practice_W1.md",
+    "exercise_Notes/Worksheet_W1.md",
+    "999_Templates/exercise_template.md",
+    "999_Templates/lecture_note_template.md",
     "POP_Kursus/vectorsWeek5.fsx",
     "POP_Kursus/varsAndWhileLoopWeek4.fsx",
     "POP_Kursus/TorsUge2.fsx",
@@ -200,8 +184,6 @@
     "POP_Kursus/hofCodeFactoringW6.fsx",
     "POP_Kursus/genTypesWeek5.fsx",
     "POP_Kursus/forLoopWeek4.fsx",
-    "999_Templates/exercise_template.md",
-    "999_Templates/lecture_note_template.md",
     "exercise_Notes/Untitled.md",
     "Lecture_Notes/Untitled.md",
     "Lecture_Notes/Functional_Programming.md",
