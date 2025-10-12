@@ -1,7 +1,7 @@
 # {{title}} {{date}}
 
-### Topic: #
-
+### Topic: 
+#
 
 #### Tasks:
 

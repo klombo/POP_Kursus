@@ -1,6 +1,7 @@
 # {{title}} {{date}}
 
-### Topic: #
+### Topics: 
+#
 ##### Important:
 
 ``` fsharp
