@@ -6,7 +6,6 @@
       {
         "id": "922c0760f05b0b82",
         "type": "tabs",
-        "dimension": 69.0989847715736,
         "children": [
           {
             "id": "9929c5fe147cabd8",
@@ -20,23 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "Deliberate_Practice_W1"
-            }
-          }
-        ]
-      },
-      {
-        "id": "1109e1a08eade723",
-        "type": "tabs",
-        "dimension": 30.9010152284264,
-        "children": [
-          {
-            "id": "a7250c848010c055",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
             }
           }
         ]
@@ -71,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#tuples",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -96,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 237.5
   },
   "right": {
     "id": "9b644a7a4fa74974",
@@ -105,6 +87,7 @@
       {
         "id": "c118c8679549feab",
         "type": "tabs",
+        "dimension": 29.45736434108527,
         "children": [
           {
             "id": "1fe827048392cb52",
@@ -112,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "999_Templates/exercise_template.md",
+                "file": "exercise_Notes/Worksheet_W1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for exercise_template"
+              "title": "Backlinks for Worksheet_W1"
             }
           },
           {
@@ -140,21 +123,6 @@
             }
           },
           {
-            "id": "466bda6ce54166d4",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
             "id": "cbacc9f067ec845d",
             "type": "leaf",
             "state": {
@@ -168,13 +136,45 @@
               "icon": "lucide-list",
               "title": "Outline of exercise_template"
             }
+          },
+          {
+            "id": "2d64345a63b1960e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "af474a8ce9c12203",
+        "type": "tabs",
+        "dimension": 70.54263565891473,
+        "children": [
+          {
+            "id": "a7250c848010c055",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 450.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,17 +190,24 @@
   "lastOpenFiles": [
     "exercise_Notes/Worksheet_W1.md",
     "exercise_Notes/Deliberate_Practice_W1.md",
+    "POP_Kursus/vectorsWeek5.fsx",
+    "POP_Kursus/varsAndWhileLoopWeek4.fsx",
+    "POP_Kursus/TorsUge2.fsx",
+    "POP_Kursus/ThursW3.fsx",
+    "POP_Kursus/reverseListFF.fsx",
+    "POP_Kursus/RationalNum.fsx",
+    "POP_Kursus/OptionsWeek4.fsx",
+    "POP_Kursus/hofCodeFactoringW6.fsx",
+    "POP_Kursus/genTypesWeek5.fsx",
+    "POP_Kursus/forLoopWeek4.fsx",
     "999_Templates/exercise_template.md",
     "999_Templates/lecture_note_template.md",
     "exercise_Notes/Untitled.md",
     "Lecture_Notes/Untitled.md",
-    "exercise_Notes",
     "Lecture_Notes/Functional_Programming.md",
     "Lecture_Notes/tues_12-10-25.md",
     "Lecture_Notes/Lecture_12-10-25_Tues.md",
     "Lecture_Notes/12-10-25.md",
-    "Lecture_Notes",
-    "999_Templates",
     "Welcome.md"
   ]
 }
