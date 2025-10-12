@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "exercise_Notes/Worksheet_W1.md",
+                "file": "exercise_Notes/Deliberate_Practice_W1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Worksheet_W1"
+              "title": "Deliberate_Practice_W1"
             }
           }
         ]
@@ -188,8 +188,8 @@
   },
   "active": "9929c5fe147cabd8",
   "lastOpenFiles": [
-    "exercise_Notes/Deliberate_Practice_W1.md",
     "exercise_Notes/Worksheet_W1.md",
+    "exercise_Notes/Deliberate_Practice_W1.md",
     "999_Templates/exercise_template.md",
     "999_Templates/lecture_note_template.md",
     "exercise_Notes/Untitled.md",
