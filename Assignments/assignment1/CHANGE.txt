@@ -8,7 +8,7 @@ I change the function addInterest in the file bank.fsx.
     - I deleted the printfn call inside the addInterest function and instead i pipe the return of the addInterest function into a print
     - This is because when pimping in fsharp, it simply returns the outcome of the higher order function, in this case it is List.map
     - List.map returns a new list with the the saving accounts but after interest has been applied.
-I have made changes to parts of 1.C, to reflect the change in output and also the small changes in the code.
+I have made changes to 1.C, to reflect the change in output and also the small changes in the code.
 
 
 To address the feedback "try solving the uneven problem for resub!"
