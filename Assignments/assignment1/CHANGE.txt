@@ -18,8 +18,8 @@ I changed createPairs function in the file groups.fsx.
     - This is because the list of tuples (int * int) could not contain a group of three, as the expected type of each element was (int * int).
     - This means using @ instead of :: in line 4 and using [] instead of ().
 I have made changes to the 2.A about the expected output given an list of students of uneven length.
-I have also changed the code snippet to match the code in my groups.fsx.
-I have also made a change in 2.B where i talk about the expected output with an example of only 10 students.
+I have also changed the code snippet in section 2.A to match the code in my groups.fsx.
+I have also made a change in the beginning of 2.B where i talk about the expected output with an example of only 10 students.
 
 
 To Adress the feedback "Examples of recursive functions from the class are missing"
