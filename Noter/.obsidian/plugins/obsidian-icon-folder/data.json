@@ -36,7 +36,7 @@
     "iconColorInFrontmatterFieldName": "iconColor",
     "iconsBackgroundCheckEnabled": false,
     "iconsInNotesEnabled": true,
-    "iconsInLinksEnabled": true,
+    "iconsInLinksEnabled": false,
     "iconIdentifier": ":",
     "lucideIconPackType": "native",
     "debugMode": false,
