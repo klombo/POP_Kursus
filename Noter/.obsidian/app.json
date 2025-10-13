@@ -4,5 +4,6 @@
   "readableLineLength": true,
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
-  "useMarkdownLinks": false
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "z_Images"
 }
