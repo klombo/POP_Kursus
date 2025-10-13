@@ -1,6 +1,6 @@
 # {{title}} {{date}}
 
-### Topics: 
+Topics: 
 #
 ##### Important:
 
