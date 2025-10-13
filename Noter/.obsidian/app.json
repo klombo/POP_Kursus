@@ -1,5 +1,8 @@
 {
   "showInlineTitle": false,
   "showLineNumber": false,
-  "readableLineLength": true
+  "readableLineLength": true,
+  "newFileLocation": "current",
+  "showUnsupportedFiles": true,
+  "useMarkdownLinks": false
 }

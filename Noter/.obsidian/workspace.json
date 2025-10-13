@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "exercise_Notes/Deliberate_Practice_W1.md",
-                "mode": "source",
+                "file": "999_Exercise_Notes/Worksheet_W1.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Deliberate_Practice_W1"
+              "title": "Worksheet_W1"
             }
           }
         ]
@@ -170,20 +170,21 @@
   },
   "active": "9929c5fe147cabd8",
   "lastOpenFiles": [
-    "exercise_Notes/Deliberate_Practice_W1.md",
-    "exercise_Notes/Worksheet_W1.md",
+    "exercises/rationalNumbers.fsx.md",
+    "999_Exercise_Notes/Worksheet_W1.md",
+    "exercises/TorsUge2.fsx",
+    "exercises/ThursW3.fsx",
+    "exercises/reverseListFF.fsx",
+    "exercises/RationalNum.fsx",
+    "exercises/OptionsWeek4.fsx",
+    "exercises/hofCodeFactoringW6.fsx",
+    "exercises/genTypesWeek5.fsx",
+    "exercises/forLoopWeek4.fsx",
+    "exercises/DPrac3.fsx",
+    "exercises/dPrac2.fsx",
+    "999_Exercise_Notes/Deliberate_Practice_W1.md",
     "999_Templates/exercise_template.md",
     "999_Templates/lecture_note_template.md",
-    "POP_Kursus/vectorsWeek5.fsx",
-    "POP_Kursus/varsAndWhileLoopWeek4.fsx",
-    "POP_Kursus/TorsUge2.fsx",
-    "POP_Kursus/ThursW3.fsx",
-    "POP_Kursus/reverseListFF.fsx",
-    "POP_Kursus/RationalNum.fsx",
-    "POP_Kursus/OptionsWeek4.fsx",
-    "POP_Kursus/hofCodeFactoringW6.fsx",
-    "POP_Kursus/genTypesWeek5.fsx",
-    "POP_Kursus/forLoopWeek4.fsx",
     "exercise_Notes/Untitled.md",
     "Lecture_Notes/Untitled.md",
     "Lecture_Notes/Functional_Programming.md",
