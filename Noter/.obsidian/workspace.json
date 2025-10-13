@@ -20,8 +20,51 @@
               "icon": "lucide-file",
               "title": "Deliberate_Practice_W2"
             }
+          },
+          {
+            "id": "0094b9930ccdbc4a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "999_Exercise_Notes/Worksheet_W2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Worksheet_W2"
+            }
+          },
+          {
+            "id": "d652c7b9cc7b40f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "999_Exercise_Notes/Worksheet_W1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Worksheet_W1"
+            }
+          },
+          {
+            "id": "dda4f81003fa130e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "999_Exercise_Notes/Deliberate_Practice_W3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Deliberate_Practice_W3"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -53,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#types/lists",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.5
+    "width": 244.5,
+    "collapsed": true
   },
   "right": {
     "id": "9b644a7a4fa74974",
@@ -167,14 +211,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "9929c5fe147cabd8",
+  "active": "dda4f81003fa130e",
   "lastOpenFiles": [
-    "exercises/recursiveFunctions.fsx",
-    "999_Templates/exercise_template.md",
-    "999_Exercise_Notes/Deliberate_Practice_W2.md",
     "999_Exercise_Notes/Worksheet_W1.md",
-    "999_Exercise_Notes/Deliberate_Practice_W1.md",
+    "999_Exercise_Notes/Deliberate_Practice_W3.md",
+    "999_Exercise_Notes/Worksheet_W2.md",
+    "999_Exercise_Notes/Deliberate_Practice_W2.md",
+    "exercises/countingBits.fsx",
+    "Pasted image 20251013160106.png",
     "999_Templates/lecture_note_template.md",
+    "999_Templates/exercise_template.md",
+    "exercises/diamondShape.fsx",
+    "exercises/rationalNum.fsx",
+    "exercises/recursiveFunctions.fsx",
+    "999_Exercise_Notes/Deliberate_Practice_W1.md",
     "999_Screenshots",
     "exercises/rationalNumbers.fsx.md",
     "exercises/TorsUge2.fsx",
@@ -182,10 +232,6 @@
     "exercises/reverseListFF.fsx",
     "exercises/RationalNum.fsx",
     "exercises/OptionsWeek4.fsx",
-    "exercises/hofCodeFactoringW6.fsx",
-    "exercises/genTypesWeek5.fsx",
-    "exercises/forLoopWeek4.fsx",
-    "exercises/DPrac3.fsx",
     "exercise_Notes/Untitled.md",
     "Lecture_Notes/Untitled.md",
     "Lecture_Notes/Functional_Programming.md",

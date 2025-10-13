@@ -1,8 +1,8 @@
-# Deliberate_Practice_W1 2-9-25
+# Deliberate_Practice_W1
 
+#### Exercises:
 Topics: 
 #functions/declaration
-#### Exercises:
 The `.fsx` doesn't exist
 - Define a function that takes as parameter the radius of a circle and returns its area
 ``` fsharp

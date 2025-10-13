@@ -1,8 +1,8 @@
-# Worksheet_W1 4-9-25
+# Worksheet_W1
 
+#### Exercises:
 Topics: 
 #functions/declaration #types/tuples 
-#### Exercises:
 ##### 1. Average
 The `.fsx` file doesn't exist
 The brief description of the function avg below is that it return the average of two numbers:
@@ -18,7 +18,7 @@ let avg (x: float) (y: float) : float =
 	average
 ```
 ##### 2. Rational Numbers
-The `.fsx` file is [`rationNumbers.fsx`](exercises/rationalNum.fsx)
+The `.fsx` file is [`rationalNum.fsx`](exercises/rationalNum.fsx)
 ``` fsharp
 let qplus (a : int, b: int) (c: int, d: int) : (int * int) =
     ((a*d + b*c), b*d)
@@ -37,7 +37,7 @@ let toString (a: int, b: int) : string =
 
 printfn "1/2 + 1/3 = %s" (toString (qplus (1,2) (1,3)))
 ```
-Express the following arithmetic expressions in rationals.fsx
+Express the following arithmetic expressions in `rationalNum.fsx`
 2/3 - 3/2  
 1/4 + 3/4 + 1/2  
 3/4 - (3/2 * 1/2)
