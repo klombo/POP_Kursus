@@ -1,6 +1,6 @@
 # Worksheet_W1 4-9-25
 
-Topic: 
+Topics: 
 #functions/declaration #types/tuples 
 #### Exercises:
 ##### 1. Average

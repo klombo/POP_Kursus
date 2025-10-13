@@ -9,17 +9,17 @@
     "recentlyUsedIconsSize": 5,
     "rules": [
       {
-        "rule": ".fsx",
+        "rule": ".fs",
         "icon": "LiActivitySquare",
         "for": "everything",
-        "order": 0,
+        "order": 1,
         "color": "#007acc"
       },
       {
         "rule": ".md",
         "icon": "LiBookMarked",
         "for": "everything",
-        "order": 1
+        "order": 2
       }
     ],
     "extraMargin": {
@@ -29,8 +29,8 @@
       "left": 0
     },
     "iconInTabsEnabled": true,
-    "iconInTitleEnabled": true,
-    "iconInTitlePosition": "above",
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "inline",
     "iconInFrontmatterEnabled": false,
     "iconInFrontmatterFieldName": "icon",
     "iconColorInFrontmatterFieldName": "iconColor",

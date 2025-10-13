@@ -1,11 +1,11 @@
 # {{title}} {{date}}
 
-Topic: 
+Topics: 
 #
 
 #### Exercises:
-The `.fsx` file is called ``
 #### 1.
+The `.fsx` file is  [`example.fsx`](exercises/example.fsx)
 
 ``` fsharp
 

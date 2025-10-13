@@ -31,7 +31,7 @@
   "pageHeader": [
     {
       "id": "workspace:edit-file-title",
-      "icon": "lucide-edit-3",
+      "icon": "lucide-pencil",
       "name": "Rename file",
       "mode": "any"
     },
