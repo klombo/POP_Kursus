@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 244.5,
-    "collapsed": true
+    "width": 244.5
   },
   "right": {
     "id": "9b644a7a4fa74974",
@@ -170,10 +169,11 @@
   },
   "active": "9929c5fe147cabd8",
   "lastOpenFiles": [
-    "999_Exercise_Notes/Worksheet_W1.md",
-    "999_Exercise_Notes/Deliberate_Practice_W2.md",
-    "999_Exercise_Notes/Deliberate_Practice_W1.md",
+    "exercises/recursiveFunctions.fsx",
     "999_Templates/exercise_template.md",
+    "999_Exercise_Notes/Deliberate_Practice_W2.md",
+    "999_Exercise_Notes/Worksheet_W1.md",
+    "999_Exercise_Notes/Deliberate_Practice_W1.md",
     "999_Templates/lecture_note_template.md",
     "999_Screenshots",
     "exercises/rationalNumbers.fsx.md",

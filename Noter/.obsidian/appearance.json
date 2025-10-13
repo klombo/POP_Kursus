@@ -1,3 +1,5 @@
 {
-  "showRibbon": true
+  "showRibbon": true,
+  "theme": "system",
+  "cssTheme": "Atom"
 }
