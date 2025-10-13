@@ -1,10 +1,12 @@
-(* let rec extractString (tuplelist: (string * int) list) : int list =
+(* 
+let rec extractString (tuplelist: (string * int) list) : int list =
     match tuplelist with
     | [] -> []
     | head::tail -> snd head :: extractString tail
 
 let listOfTuples = [("hej", 1); ("hello", 2); ("goddav", 4)]
-printfn "%A" (extractString listOfTuples) *)
+printfn "%A" (extractString listOfTuples) 
+*)
 
 
 (* Define a functoin that takes as input a list of list of integers 
@@ -21,9 +23,10 @@ printfn "%A" (extractListOfInts Ints)
 
 // Define a function that takes as input a list of string and
 // returns the contatenation of these strings
-
-(*let ConcanateString (listofString : string list) : string =
-    String.concat " " listofString*)
+(*
+let ConcanateString (listofString : string list) : string =
+    String.concat " " listofString
+*)
 
 let rec ConcanateString (listOfStrings : string list) : string =
     match listOfStrings with

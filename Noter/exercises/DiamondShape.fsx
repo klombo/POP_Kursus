@@ -65,7 +65,7 @@ let rec print_list (l: string list) : unit =
         print_list l.Tail
 
 
-printf "VÆLG EN LILLE STØRRELSE (TAK) "
+printfn "VÆLG EN LILLE STØRRELSE (TAK) "
 
 let input = System.Console.ReadLine()
 let size = int input
