@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ynGnAYT3rX4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kleme\\POP_Kursus\\Assignments\\assignment2\\src\\MyList\\MyList.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kleme\\.nuget\\packages\\fsharp.core\\9.0.303\\fsharp.core.9.0.303.nupkg.sha512"
+  ],
+  "logs": []
+}
