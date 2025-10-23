@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="MyList.fsi" />
+    <Compile Include="MyList.fs" />
+    <Compile Include="MyListExamples.fsx" />
   </ItemGroup>
 
 </Project>
