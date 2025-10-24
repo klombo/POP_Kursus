@@ -7,7 +7,6 @@ let test (condition: bool): string =
     else "[FAILED]"
 
 // Property 1 Testing
-
 let hasPropertyOne ((n,k) : int * int) : bool =
     if (k = 0 || k = n) then
         pascal (n,k) = 1
@@ -29,6 +28,7 @@ let hasPropertyTwoNoRec ((n,k) : int * int) : bool =
         pascalNoRec(n,k) = pascalNoRec(n-1,k-1) + pascalNoRec(n-1,k)
     else false
 
+// Testing Inputs outside of Triangle
 let inputOutOfTriangle ((n,k) : int * int) : bool =
     if (n < 0 || k<0 || k>n) then
         pascal (n,k) = 0
