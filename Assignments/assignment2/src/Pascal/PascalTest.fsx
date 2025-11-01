@@ -60,3 +60,15 @@ let invalidTestValues = [ (-1, 0); (3, -1); (3,5)]
 for pair in invalidTestValues do
     printfn "Test that Inputs out of Triangle return 0 for pascal with (n, k): %A = %s" (pair) (test (inputOutOfTriangle pair))
     printfn "Test that Inputs out of Triangle return 0 for pascalNoRec with (n, k): %A = %s" (pair) (test (inputOutOfTriangleNoRec pair))
+
+let mutable foundMax = false
+let mutable i = 1
+
+while foundMax = false do
+    let result = pascal(i, i/2)
+    if result <= 0 then
+        printfn "The max n is %A" (i-1)
+        foundMax <- true 
+    else 
+        printfn "pascal for (n,k) %A = %A" (i, i/2) (result)
+        i <- i + 1

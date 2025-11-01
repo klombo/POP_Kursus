@@ -1,0 +1,3 @@
+Changed the output for n > 33 to be an error, this is the last n where the entire row of k's returns a value inside 32bit integers.
+    - Added a check that now returns an error using Options when n > 0.
+    - Added parts in the report
