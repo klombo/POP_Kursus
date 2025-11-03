@@ -1,14 +1,15 @@
 module Pascal
 
+type IntOrNaN =
+    | Value of int
+    | NaN
 
-// Takes a pair of natural numbers n and k, and returns the corresponding binomial coefficient for n choose k
-// If n > 33, some k values will output a binomial coefficent bigger the max 32int, we instead give an error if n>33.
-// If the pair is outside the triangle meaning n<k or n<0 or k<0 then we return 0
-// pascal: int * int -> int
-val pascal : (int * int) -> int
+// This function uses recursion to calculate the value of the position (n, k) in Pascal's triangle.
+// Returns the position's Value int if the inputs are valid and NaN if k > n, n < 0, k < 0 or n > 33.
+// Always returns Value 1 for the edges, k = 0 or k = n, no matter how large n is.
+val pascal : (int * int) -> IntOrNaN
 
-// Takes a pair of natural number n and k, and returns the corresponding binomial coefficient for n choose k
-// If n > 33, some k values will output a binomial coefficent bigger the max 32int, we instead give an error if n>33.
-// If the pair is outside the triangle meaning n<k or n<0 or k<0 then we return 0
-// pascalNoRec : int * int -> int
-val pascalNoRec : (int * int) -> int
+// This function calculates the value of the position (n, k) in Pascal's triangle without using recursion.
+// Returns the position's Value int if the inputs are valid and NaN if k > n, n < 0, k < 0 or n > 33.
+// Always returns Value 1 for the edges, k = 0 or k = n, no matter how large n is.
+val pascalNoRec : (int * int) -> IntOrNaN

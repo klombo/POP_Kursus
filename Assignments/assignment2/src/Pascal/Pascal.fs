@@ -1,14 +1,23 @@
 module Pascal 
 
-let rec pascal ((n, k) : int * int) : int =
-    match n,k with
-    | n,k when k > n || n < 0 || k < 0 -> 0
-    | _,0 -> 1
-    | n,k when n = k -> 1
-    | n,k -> pascal (n-1, k-1) + pascal (n-1,k)
+type IntOrNaN =
+    | Value of int
+    | NaN
 
-let pascalNoRec ((n, k) : int * int) : int =
-    if n < 0 || k < 0 || k > n then 0
+let rec pascal (n : int, k : int) : IntOrNaN =
+    match n,k with
+    | n,k when k > n || n < 0 || k < 0 -> NaN
+    | n,k when n = k || k = 0 -> Value 1
+    | n,_ when n > 33 -> NaN
+    | n,k -> match pascal (n-1, k-1), pascal (n-1,k) with
+                | Value x, Value y -> Value (x + y)
+                | _, NaN -> NaN
+                | NaN,_ -> NaN
+
+let pascalNoRec ((n, k) : int * int) : IntOrNaN =
+    if n < 0 || k < 0 || k > n then NaN
+    elif n = k || k = 0 then Value 1
+    elif n > 33 then NaN
     else // Pascals triangle is initilazed at zero therefore it is n + 1
         let mutable triangle = Array.init (n+1) (fun index -> Array.zeroCreate (index+1))
         for row in 0..n do
@@ -18,6 +27,5 @@ let pascalNoRec ((n, k) : int * int) : int =
                 else
                     triangle.[row].[column] <- triangle.[row-1].[column-1] + triangle.[row-1].[column]
     
-        triangle.[n].[k]
-    
+        Value triangle.[n].[k]
             

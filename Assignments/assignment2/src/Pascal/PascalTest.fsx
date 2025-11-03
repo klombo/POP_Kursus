@@ -9,34 +9,40 @@ let test (condition: bool): string =
 // Property 1 Testing
 let hasPropertyOne ((n,k) : int * int) : bool =
     if (k = 0 || k = n) then
-        pascal (n,k) = 1
+        pascal (n,k) = Value 1
     else false
 
 let hasPropertyOneNoRec ((n,k) : int * int) : bool =
     if (k = 0 || k = n) then
-        pascalNoRec (n,k) = 1
+        pascalNoRec (n,k) = Value 1
     else false
 
 // Property 2 Testing
 let hasPropertyTwo ((n,k) : int * int) : bool =
     if (n > k && k > 0) then
-        pascal(n,k) = pascal(n-1, k-1) + pascal(n-1,k)
+        pascal(n,k) = match pascal (n-1, k-1),  pascal (n-1,k) with
+                        | Value x, Value y -> Value (x + y)
+                        | _, NaN -> NaN
+                        | NaN,_ -> NaN
     else false
 
-let hasPropertyTwoNoRec ((n,k) : int * int) : bool = 
+let hasPropertyTwoNoRec ((n,k) : int * int) : bool =
     if (n > k && k > 0) then
-        pascalNoRec(n,k) = pascalNoRec(n-1,k-1) + pascalNoRec(n-1,k)
+        pascalNoRec(n,k) = match pascalNoRec (n-1, k-1),  pascal (n-1,k) with
+                            | Value x, Value y -> Value (x + y)
+                            | _, NaN -> NaN
+                            | NaN,_ -> NaN
     else false
 
 // Testing Inputs outside of Triangle
 let inputOutOfTriangle ((n,k) : int * int) : bool =
     if (n < 0 || k<0 || k>n) then
-        pascal (n,k) = 0
+        pascal (n,k) = NaN
     else false
 
 let inputOutOfTriangleNoRec ((n,k): int * int) : bool =
     if (n < 0 || k<0 || k>n) then
-        pascalNoRec (n,k) = 0
+        pascalNoRec (n,k) = NaN
     else false
 
 
@@ -66,7 +72,7 @@ let mutable i = 1
 
 while foundMax = false do
     let result = pascal(i, i/2)
-    if result <= 0 then
+    if result <= Value 0 then
         printfn "The max n is %A" (i-1)
         foundMax <- true 
     else 
