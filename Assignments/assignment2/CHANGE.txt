@@ -1,3 +1,18 @@
-Changed the output for n > 33 to be an error, this is the last n where the entire row of k's returns a value inside 32bit integers.
-    - Added a check that now returns an error using Options when n > 0.
-    - Added parts in the report
+MISSING: File Pascal.fsi contains a (human-readable) specification that matches the tests.
+
+MISSING: File Pascal.fsi contains a warning for runtime errors (memory or overflows), or is only defined to some maximum safe number.
+
+The functions pascal and PascalNoRec returns some special value (preferably int option) for n<0, k<0 or n<k.
+You return 0, not really a special value. Consider for resub making this None or NaN :)
+
+There is an argument for why the special value is 'good'.
+
+The report makes clear that the purpose of test design is to systematically find test data aimed at showing that the code does not satisfy its specification.
+It's very implied but I would like it to be extraordinarily clear.
+
+MISSING: The test design describes how extreme/boundary values were chosen from each partitition.
+I want very big numbers and very very small numbers (big negative numbers)
+
+
+[+/-] There are at least three examples uses of each function in MyListExamples.fsx.
+But... why not passed and failed? You had done perfectly in Pascal. Why change it here?

@@ -2,14 +2,14 @@ module Pascal
 
 type IntOrNaN =
     | Value of int
-    | NaN
+    | Error of string
 
 // This function uses recursion to calculate the value of the position (n, k) in Pascal's triangle.
-// Returns the position's Value int if the inputs are valid and NaN if k > n, n < 0, k < 0 or n > 33.
-// Always returns Value 1 for the edges, k = 0 or k = n, no matter how large n is.
+// Returns the position's Value int if the inputs are valid and Error Invalid Input if k > n || n < 0 || k < 0 || n > 10000.
+// The function returns Error Overflow if value of the position (n, k) is bigger than Int32 Max Value
 val pascal : (int * int) -> IntOrNaN
 
 // This function calculates the value of the position (n, k) in Pascal's triangle without using recursion.
-// Returns the position's Value int if the inputs are valid and NaN if k > n, n < 0, k < 0 or n > 33.
-// Always returns Value 1 for the edges, k = 0 or k = n, no matter how large n is.
+// Returns the position's Value int if the inputs are valid and Error Invalid Input if k > n || n < 0 || k < 0 || n > 100000.
+// If value of the position (n, k) is bigger than Int32 Max Value the function returns Error Overflow 
 val pascalNoRec : (int * int) -> IntOrNaN

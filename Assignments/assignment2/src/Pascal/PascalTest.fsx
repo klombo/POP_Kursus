@@ -22,59 +22,46 @@ let hasPropertyTwo ((n,k) : int * int) : bool =
     if (n > k && k > 0) then
         pascal(n,k) = match pascal (n-1, k-1),  pascal (n-1,k) with
                         | Value x, Value y -> Value (x + y)
-                        | _, NaN -> NaN
-                        | NaN,_ -> NaN
+                        | _, Error e -> Error e
+                        | Error e,_ -> Error e
     else false
 
 let hasPropertyTwoNoRec ((n,k) : int * int) : bool =
     if (n > k && k > 0) then
         pascalNoRec(n,k) = match pascalNoRec (n-1, k-1),  pascal (n-1,k) with
                             | Value x, Value y -> Value (x + y)
-                            | _, NaN -> NaN
-                            | NaN,_ -> NaN
+                            | _, Error e -> Error e
+                            | Error e,_ -> Error e
     else false
 
 // Testing Inputs outside of Triangle
-let inputOutOfTriangle ((n,k) : int * int) : bool =
+let inputInvalid ((n,k) : int * int) : bool =
     if (n < 0 || k<0 || k>n) then
-        pascal (n,k) = NaN
+        pascal (n,k) = Error "Invalid Input"
     else false
 
-let inputOutOfTriangleNoRec ((n,k): int * int) : bool =
+let inputInvalidNoRec ((n,k): int * int) : bool =
     if (n < 0 || k<0 || k>n) then
-        pascalNoRec (n,k) = NaN
+        pascalNoRec (n,k) = Error "Invalid Input"
     else false
-
 
 // Testing Property 1
-printfn "!!! Testing Property 1 !!!"
-let propertyOneTestValues = [ (0,0); (6,0); (6,6) ]
+printfn "\n !!! Testing Property 1 !!!"
+let propertyOneTestValues = [ (0,0); (6,0); (6,6); (10000,10000); (10000,0)]
 for pair in propertyOneTestValues do
     printfn "Property 1 Test for pascal with (n, k): %A = %s" (pair) (test (hasPropertyOne pair))
     printfn "Property 1 Test for pascalNoRec with (n, k): %A = %s" (pair) (test (hasPropertyOneNoRec pair))
 
 // Testing Property 2
-printfn "!!! Testing Property 2 !!!"
-let propertyTwoTestValues = [ (5,2); (6,3); (2,1) ]
+printfn "\n !!! Testing Property 2 !!!"
+let propertyTwoTestValues = [ (5,2); (34,17); (1000,999) ]
 for pair in propertyTwoTestValues do
     printfn "Property 2 Test for pascal with (n, k): %A = %s" (pair) (test (hasPropertyTwo pair))
     printfn "Property 2 Test for pascalNoRec with (n, k): %A = %s" (pair) (test (hasPropertyTwoNoRec pair))
 
 // Testing for cases outside pascals Triangle
-printfn "!!! Testing cases outside pascals Triangle !!!"
-let invalidTestValues = [ (-1, 0); (3, -1); (3,5)]
+printfn "\n !!! Testing Invalid Input !!!"
+let invalidTestValues = [(-1, 0); (3, -1); (3,5); (100,-1000000); (-10000,-10000); (10000,1000000)]
 for pair in invalidTestValues do
-    printfn "Test that Inputs out of Triangle return 0 for pascal with (n, k): %A = %s" (pair) (test (inputOutOfTriangle pair))
-    printfn "Test that Inputs out of Triangle return 0 for pascalNoRec with (n, k): %A = %s" (pair) (test (inputOutOfTriangleNoRec pair))
-
-let mutable foundMax = false
-let mutable i = 1
-
-while foundMax = false do
-    let result = pascal(i, i/2)
-    if result <= Value 0 then
-        printfn "The max n is %A" (i-1)
-        foundMax <- true 
-    else 
-        printfn "pascal for (n,k) %A = %A" (i, i/2) (result)
-        i <- i + 1
+    printfn "Test that Inputs out of Triangle return Error Invalid Input for pascal with (n, k): %A = %s" (pair) (test (inputInvalid pair))
+    printfn "Test that Inputs out of Triangle return Error Invalid Input for pascalNoRec with (n, k): %A = %s" (pair) (test (inputInvalidNoRec pair))
