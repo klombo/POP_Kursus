@@ -6,9 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Pascal.fsi" />
-    <Compile Include="Pascal.fs" />
-    <Compile Include="PascalTest.fsx" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DIKU.Canvas" Version="2.0.4" />
   </ItemGroup>
 
 </Project>

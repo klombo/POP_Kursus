@@ -1,10 +1,10 @@
-module Pascal 
+module Pascal
 
-type IntOrNaN =
+type IntOrError =
     | Value of int
     | Error of string
 
-let rec pascal (n : int, k : int) : IntOrNaN =
+let rec pascal (n : int, k : int) : IntOrError =
     match n,k with
     | n,k when k > n || n < 0 || k < 0 || n > 10000 -> Error "Invalid Input"
     | n,k when n = k || k = 0 -> Value 1
@@ -14,7 +14,7 @@ let rec pascal (n : int, k : int) : IntOrNaN =
                 | _, Error e -> Error e
                 | Error e,_ -> Error e
 
-let pascalNoRec ((n, k) : int * int) : IntOrNaN =
+let pascalNoRec ((n, k) : int * int) : IntOrError =
     if n < 0 || k < 0 || k > n || n > 100000 then Error "Invalid Input"
     elif n = k || k = 0 then Value 1
     else // Pascals triangle is initilazed at zero therefore it is n + 1

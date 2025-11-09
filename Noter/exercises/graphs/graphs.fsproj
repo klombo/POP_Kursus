@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Pascal.fsi" />
-    <Compile Include="Pascal.fs" />
-    <Compile Include="PascalTest.fsx" />
+    <Compile Include="graphs.fs"/>
+    <Compile Include="graphs.fsi"/>
+    <Compile Include="graphs.fsx"/>
   </ItemGroup>
 
 </Project>

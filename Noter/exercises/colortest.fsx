@@ -15,8 +15,7 @@ let draw ((x: int, y: int): state): Picture =
     |> make
 
 /// React to whenever an event happens
-/// All but left-, right-, up-, and down-arrows are ignored. Each of these
-/// key-presses produces a window with a unique color.
+/// All but left-, right-, up-, and down-arrows are ignored. Each of these move the square by step
 /// Present state is ignored.
 let react ((x: int, y: int): state) (ev:Event) : state option =
     match ev with

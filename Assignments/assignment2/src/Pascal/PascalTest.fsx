@@ -54,7 +54,7 @@ for pair in propertyOneTestValues do
 
 // Testing Property 2
 printfn "\n !!! Testing Property 2 !!!"
-let propertyTwoTestValues = [ (5,2); (34,17); (1000,999) ]
+let propertyTwoTestValues = [ (5,2); (35,17); (10000,9999); (-1000,999) ]
 for pair in propertyTwoTestValues do
     printfn "Property 2 Test for pascal with (n, k): %A = %s" (pair) (test (hasPropertyTwo pair))
     printfn "Property 2 Test for pascalNoRec with (n, k): %A = %s" (pair) (test (hasPropertyTwoNoRec pair))
