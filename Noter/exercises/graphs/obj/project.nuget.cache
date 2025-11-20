@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "IKSDEARUA6Q=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kleme\\POP_Kursus\\Noter\\exercises\\graphs\\graphs.fsproj",
+=======
   "dgSpecHash": "rFfHXLUdzIw=",
   "success": true,
   "projectFilePath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Noter\\exercises\\graphs\\graphs.fsproj",
+>>>>>>> 6524ddfe79bbd0588df72a52fea82ca0b0846c8e
   "expectedPackageFiles": [
     "C:\\Users\\kleme\\.nuget\\packages\\fsharp.core\\9.0.303\\fsharp.core.9.0.303.nupkg.sha512"
   ],
