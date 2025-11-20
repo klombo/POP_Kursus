@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 C:\Users\kleme\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.fsproj.AssemblyReference.cache
 C:\Users\kleme\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.AssemblyInfoInputs.cache
 C:\Users\kleme\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.AssemblyInfo.fs
 C:\Users\kleme\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.fsproj.CoreCompileInputs.cache
 C:\Users\kleme\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.sourcelink.json
+=======
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.fsproj.AssemblyReference.cache
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.AssemblyInfoInputs.cache
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.AssemblyInfo.fs
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.fsproj.CoreCompileInputs.cache
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.sourcelink.json
+>>>>>>> 6524ddfe79bbd0588df72a52fea82ca0b0846c8e

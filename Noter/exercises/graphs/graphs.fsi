@@ -1,9 +1,11 @@
 module Graphs
 
 type Vertex = uint
+type Edge = Vertex * Vertex
+
 type Graph = 
-    | emptyGraph
-    | Graph of uint * uint list
+    | EmptyGraph
+    | Graph of Set<Vertex> * Set<Edge>
 
 // insert a vertex in a Graph and return the updated Graph. If the vertex already exists, then nothing changes.
 val insertVertex: Graph -> Vertex -> Graph 

@@ -113,6 +113,7 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\kleme\\POP_Kursus\\Noter\\exercises\\graphs\\graphs.fsproj",
       "projectName": "graphs",
       "projectPath": "C:\\Users\\kleme\\POP_Kursus\\Noter\\exercises\\graphs\\graphs.fsproj",
@@ -122,13 +123,27 @@
       "configFilePaths": [
         "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Noter\\exercises\\graphs\\graphs.fsproj",
+      "projectName": "graphs",
+      "projectPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Noter\\exercises\\graphs\\graphs.fsproj",
+      "packagesPath": "C:\\Users\\kleme\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Noter\\exercises\\graphs\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 6524ddfe79bbd0588df72a52fea82ca0b0846c8e
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+<<<<<<< HEAD
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\sdk\\9.0.304\\FSharp\\library-packs": {},
+=======
+        "C:\\Program Files\\dotnet\\sdk\\9.0.306\\FSharp\\library-packs": {},
+>>>>>>> 6524ddfe79bbd0588df72a52fea82ca0b0846c8e
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -171,7 +186,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 6524ddfe79bbd0588df72a52fea82ca0b0846c8e
       }
     }
   }
