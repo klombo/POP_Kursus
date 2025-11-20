@@ -1,25 +1,32 @@
-To adress the feedback "MISSING: File Pascal.fsi contains a (human-readable) specification that matches the tests."
+To address the feedback "MISSING: File Pascal.fsi contains a (human-readable) specification that matches the tests."
     - I changed the specification in the file Pascal.fsi to be more readable.
     - The specification also matches closer with the cases that we test for.
 
-To adress the feedback "MISSING: File Pascal.fsi contains a warning for runtime errors (memory or overflows), or is only defined to some maximum safe number."
+To address the feedback "MISSING: File Pascal.fsi contains a warning for runtime errors (memory or overflows), or is only defined to some maximum safe number."
     - I changed the specification in the file Pascal.fsi to a max for the functions pascal and pascalNoRec, where the function will run
     - This limit is different because for pascal and pascalNoRec, 10000 and 100000, because the functions encounter runtime errors for different n values.
+    - I also added a check for whether n > 10000 or n > 100000 in pascal and pascalNoRec and returns invalidInput if it is.
 
-To address the feedback " You return 0, not really a special value. Consider for resub making this None or NaN :)"
+To address the feedback "You return 0, not really a special value. Consider for resub making this None or NaN :)"
     - I changed the function to return a new type called IntOrError, which returns a Error Invalid Input, when we encounter k > n || n < 0 || k < 0.
     - This means that the functions now return a new type which is either Error of string or a Value of int.
-    - I also changed the Pascal.fsi file to match the change in output type.
+    - I also changed the specification in the Pascal.fsi file to match the change in output type.
+    - I also changed the parts about the output in the sections 2.a and 2.b.
 
-There is an argument for why the special value is 'good'.
+To address the feedback "There is an argument for why the special value is 'good'."
+    - Rewrote the 2.c section in the report.
 
-The report makes clear that the purpose of test design is to systematically find test data aimed at showing that the code does not satisfy its specification.
-It's very implied but I would like it to be extraordinarily clear.
+To address the feedback "The report makes clear that the purpose of test design is to systematically find test data aimed at showing that the code does not satisfy its specification.
+It's very implied but I would like it to be extraordinarily clear."
+    - Rewrote the end of the section 2.d in the report, where i talk about the test data.
 
 To address the feedback "MISSING: The test design describes how extreme/boundary values were chosen from each partitition."
     - I changed the Test values in PascalTest.fsx to contain bigger numbers, big negatives and big positive numbers.
     - These now go up to the limit of meaning 10000 and down to -1000000.
 
+I rewrote the section 2.e, to add a reflection about an issue caused after I added the integer overflow errors, for the pair (34,17).
 
-[+/-] There are at least three examples uses of each function in MyListExamples.fsx.
-But... why not passed and failed? You had done perfectly in Pascal. Why change it here?
+To address the feedback "here are at least three examples uses of each function in MyListExamples.fsx.
+But... why not passed and failed? You had done perfectly in Pascal. Why change it here?"
+    - Making this into a test-suite was not a part of the assignment, therefore i didn't do it in this assignment.
+    - I haven't done this for resub either as it was not part of the assignment. Sorry

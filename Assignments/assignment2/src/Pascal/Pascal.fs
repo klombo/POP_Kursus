@@ -9,7 +9,7 @@ let rec pascal (n : int, k : int) : IntOrError =
     | n,k when k > n || n < 0 || k < 0 || n > 10000 -> Error "Invalid Input"
     | n,k when n = k || k = 0 -> Value 1
     | n,k -> match pascal (n-1, k-1), pascal (n-1,k) with
-                | Value x, Value y when x + y < 0 -> Error "Overflow Output"
+                | Value x, Value y when x + y <= 0 -> Error "Overflow Output"
                 | Value x, Value y -> Value (x + y)
                 | _, Error e -> Error e
                 | Error e,_ -> Error e

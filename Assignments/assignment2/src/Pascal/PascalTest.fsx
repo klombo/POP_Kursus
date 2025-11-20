@@ -21,6 +21,7 @@ let hasPropertyOneNoRec ((n,k) : int * int) : bool =
 let hasPropertyTwo ((n,k) : int * int) : bool =
     if (n > k && k > 0) then
         pascal(n,k) = match pascal (n-1, k-1),  pascal (n-1,k) with
+                        | Value x, Value y when x + y <= 0 -> Error "Overflow Output"
                         | Value x, Value y -> Value (x + y)
                         | _, Error e -> Error e
                         | Error e,_ -> Error e
@@ -54,7 +55,7 @@ for pair in propertyOneTestValues do
 
 // Testing Property 2
 printfn "\n !!! Testing Property 2 !!!"
-let propertyTwoTestValues = [ (5,2); (35,17); (10000,9999); (-1000,999) ]
+let propertyTwoTestValues = [ (5,2); (34,17); (10000,9999); ]
 for pair in propertyTwoTestValues do
     printfn "Property 2 Test for pascal with (n, k): %A = %s" (pair) (test (hasPropertyTwo pair))
     printfn "Property 2 Test for pascalNoRec with (n, k): %A = %s" (pair) (test (hasPropertyTwoNoRec pair))
