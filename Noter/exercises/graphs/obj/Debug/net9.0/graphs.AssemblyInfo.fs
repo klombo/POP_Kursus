@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("graphs")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2d1a93c8fd55576c551da35efb7fd25ab51b765")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6524ddfe79bbd0588df72a52fea82ca0b0846c8e")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("graphs")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("graphs")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
