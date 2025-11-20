@@ -1,0 +1,5 @@
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.fsproj.AssemblyReference.cache
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.AssemblyInfoInputs.cache
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.AssemblyInfo.fs
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.fsproj.CoreCompileInputs.cache
+C:\Users\kleme\Uni_Kurser\POP_Kursus\Noter\exercises\graphs\obj\Debug\net9.0\graphs.sourcelink.json

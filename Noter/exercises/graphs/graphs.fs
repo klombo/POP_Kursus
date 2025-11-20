@@ -28,7 +28,7 @@ let deleteEdge (g: Graph) (e: Edge) : Graph =
     | EmptyGraph -> g
     | Graph(vList : Set<Vertex>, setE : Set<Edge>) -> Graph(vList, setE.Remove(e))
 
-let edgeExists (g: Graph) (e: Edge) : bool =
-    match g with
-    | EmptyGraph -> false
-    | Graph()
+// let edgeExists (g: Graph) (e: Edge) : bool =
+//     match g with
+//     | EmptyGraph -> false
+//     | Graph()

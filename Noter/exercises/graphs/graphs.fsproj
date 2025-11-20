@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="graphs.fs"/>
     <Compile Include="graphs.fsi"/>
+    <Compile Include="graphs.fs"/>
     <Compile Include="graphs.fsx"/>
   </ItemGroup>
 
