@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YGKkNZs7SrQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kleme\\Pop_Kursus\\Noter\\exercises\\drones\\drones.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kleme\\.nuget\\packages\\fsharp.core\\9.0.303\\fsharp.core.9.0.303.nupkg.sha512"
+  ],
+  "logs": []
+}

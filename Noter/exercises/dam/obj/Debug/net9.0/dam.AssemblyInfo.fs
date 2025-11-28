@@ -7,11 +7,11 @@ open System
 open System.Reflection
 
 
-[<assembly: System.Reflection.AssemblyCompanyAttribute("Vec")>]
+[<assembly: System.Reflection.AssemblyCompanyAttribute("dam")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
 [<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce89e7ed0aae116de0cc9ccb040c40610addb652")>]
-[<assembly: System.Reflection.AssemblyProductAttribute("Vec")>]
-[<assembly: System.Reflection.AssemblyTitleAttribute("Vec")>]
+[<assembly: System.Reflection.AssemblyProductAttribute("dam")>]
+[<assembly: System.Reflection.AssemblyTitleAttribute("dam")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
 do()
