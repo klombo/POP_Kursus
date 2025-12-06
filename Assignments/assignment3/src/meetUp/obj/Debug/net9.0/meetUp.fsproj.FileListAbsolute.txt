@@ -1,0 +1,5 @@
+C:\Users\kleme\pop_Kursus\Assignments\assignment3\src\meetup\obj\Debug\net9.0\meetUp.fsproj.AssemblyReference.cache
+C:\Users\kleme\pop_Kursus\Assignments\assignment3\src\meetup\obj\Debug\net9.0\meetUp.AssemblyInfoInputs.cache
+C:\Users\kleme\pop_Kursus\Assignments\assignment3\src\meetup\obj\Debug\net9.0\meetUp.AssemblyInfo.fs
+C:\Users\kleme\pop_Kursus\Assignments\assignment3\src\meetup\obj\Debug\net9.0\meetUp.fsproj.CoreCompileInputs.cache
+C:\Users\kleme\pop_Kursus\Assignments\assignment3\src\meetup\obj\Debug\net9.0\meetUp.sourcelink.json

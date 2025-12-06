@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oVb1ANtjeoQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kleme\\pop_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kleme\\.nuget\\packages\\diku.graph\\1.0.0\\diku.graph.1.0.0.nupkg.sha512",
+    "C:\\Users\\kleme\\.nuget\\packages\\fsharp.core\\9.0.303\\fsharp.core.9.0.303.nupkg.sha512"
+  ],
+  "logs": []
+}
