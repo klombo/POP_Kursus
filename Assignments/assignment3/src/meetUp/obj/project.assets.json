@@ -2,6 +2,47 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "DIKU.Canvas/2.0.4": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "6.0.1",
+          "SixLabors.Fonts": "2.0.4",
+          "SixLabors.ImageSharp": "3.1.4",
+          "SixLabors.ImageSharp.Drawing": "2.1.3"
+        },
+        "compile": {
+          "lib/net6.0/canvas.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/canvas.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libSDL2.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/libSDL2.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/libSDL2.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/SDL2.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/SDL2.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
       "DIKU.Graph/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -71,10 +112,77 @@
             "locale": "zh-Hant"
           }
         }
+      },
+      "SixLabors.Fonts/2.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/3.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "SixLabors.ImageSharp.Drawing/2.1.3": {
+        "type": "package",
+        "dependencies": {
+          "SixLabors.Fonts": "2.0.3",
+          "SixLabors.ImageSharp": "3.1.4"
+        },
+        "compile": {
+          "lib/net6.0/SixLabors.ImageSharp.Drawing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.Drawing.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
   "libraries": {
+    "DIKU.Canvas/2.0.4": {
+      "sha512": "chw3+jAY32RZxPUSy+2ep6n8/IvyA+YA5COjpSgbPZXF8Xd3cITrrwq3eeb0BEzjFLX8zIKERAm8xwTaGwqrdA==",
+      "type": "package",
+      "path": "diku.canvas/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README-SDL.txt",
+        "README.md",
+        "diku.canvas.2.0.4.nupkg.sha512",
+        "diku.canvas.nuspec",
+        "lib/net6.0/canvas.dll",
+        "lib/net6.0/canvas.xml",
+        "runtimes/linux-x64/native/libSDL2.so",
+        "runtimes/osx-arm64/native/libSDL2.dylib",
+        "runtimes/osx-x64/native/libSDL2.dylib",
+        "runtimes/win-x64/native/SDL2.dll",
+        "runtimes/win-x86/native/SDL2.dll"
+      ]
+    },
     "DIKU.Graph/1.0.0": {
       "sha512": "Sy0xY4bzEXYXze1ET6A7Mifg/zNhwYMsZP9RhuiY7V6OKX9TGyLfTa4M/s3uBPfyU9bNQPTTWc86RRMOAVf8zw==",
       "type": "package",
@@ -129,10 +237,57 @@
         "lib/netstandard2.1/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard2.1/zh-Hant/FSharp.Core.resources.dll"
       ]
+    },
+    "SixLabors.Fonts/2.0.4": {
+      "sha512": "4+NKz8W36injp98lmmM07ncp08HAK8c6FZz8vLoKxRPfJeEVWpBHlLYEbQa5rcqKKYqxUv/RVCrb8XcPhfMKUQ==",
+      "type": "package",
+      "path": "sixlabors.fonts/2.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net6.0/SixLabors.Fonts.dll",
+        "lib/net6.0/SixLabors.Fonts.xml",
+        "sixlabors.fonts.128.png",
+        "sixlabors.fonts.2.0.4.nupkg.sha512",
+        "sixlabors.fonts.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp/3.1.4": {
+      "sha512": "lFIdxgGDA5iYkUMRFOze7BGLcdpoLFbR+a20kc1W7NepvzU7ejtxtWOg9RvgG7kb9tBoJ3ONYOK6kLil/dgF1w==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/3.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/SixLabors.ImageSharp.props",
+        "lib/net6.0/SixLabors.ImageSharp.dll",
+        "lib/net6.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.3.1.4.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
+      ]
+    },
+    "SixLabors.ImageSharp.Drawing/2.1.3": {
+      "sha512": "Bo8MeLEhKlZTSV29lh1iZmKVnLFvp+lNPVIo6X1Nu/G3xVwYuhPBjTuxUNhO6bxsVR9tLDuWZULxHSJAXu6LFw==",
+      "type": "package",
+      "path": "sixlabors.imagesharp.drawing/2.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net6.0/SixLabors.ImageSharp.Drawing.dll",
+        "lib/net6.0/SixLabors.ImageSharp.Drawing.xml",
+        "sixlabors.imagesharp.drawing.128.png",
+        "sixlabors.imagesharp.drawing.2.1.3.nupkg.sha512",
+        "sixlabors.imagesharp.drawing.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "DIKU.Canvas >= *",
       "DIKU.Graph >= 1.0.0",
       "FSharp.Core >= 9.0.303"
     ]
@@ -143,22 +298,20 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kleme\\pop_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj",
+      "projectUniqueName": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\meetUp.fsproj",
       "projectName": "meetUp",
-      "projectPath": "C:\\Users\\kleme\\pop_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj",
+      "projectPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\meetUp.fsproj",
       "packagesPath": "C:\\Users\\kleme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kleme\\pop_Kursus\\Assignments\\assignment3\\src\\meetup\\obj\\",
+      "outputPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\9.0.304\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\9.0.306\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -178,6 +331,11 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "DIKU.Canvas": {
+            "target": "Package",
+            "version": "[*, )",
+            "generatePathProperty": true
+          },
           "DIKU.Graph": {
             "target": "Package",
             "version": "[1.0.0, )",
@@ -206,7 +364,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

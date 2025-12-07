@@ -6,11 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="meetUp.fs" />
+    <PackageReference Include="DIKU.Graph" Version="1.0.0" />
+    <PackageReference Include="DIKU.Canvas" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DIKU.Graph" Version="1.0.0" />
+    <Compile Include="MeetUp.fsi" />
+    <Compile Include="MeetUp.fs" />
+    <Compile Include="MeetUpExamples.fsx" />
   </ItemGroup>
 
 </Project>

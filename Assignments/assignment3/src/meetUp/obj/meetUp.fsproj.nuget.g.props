@@ -15,5 +15,6 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\kleme\.nuget\packages\fsharp.core\9.0.303</PkgFSharp_Core>
     <PkgDIKU_Graph Condition=" '$(PkgDIKU_Graph)' == '' ">C:\Users\kleme\.nuget\packages\diku.graph\1.0.0</PkgDIKU_Graph>
+    <PkgDIKU_Canvas Condition=" '$(PkgDIKU_Canvas)' == '' ">C:\Users\kleme\.nuget\packages\diku.canvas\2.0.4</PkgDIKU_Canvas>
   </PropertyGroup>
 </Project>

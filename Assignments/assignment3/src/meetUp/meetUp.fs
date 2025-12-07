@@ -1,133 +1,287 @@
-#r "nuget:DIKU.Canvas"
-#r "nuget: DIKU.Graph, 1.0.0"
+module MeetUp
+
 open simpleGraph
 open Canvas
 open Color
+open System
 
-module MeetUp =
+[<AbstractClass>]
+type Participant (name: string, politicalview: float, influenciable: float, rizz: float) =
 
-    [<AbstractClass>]
-    type Participant (name: string, politicalview: float, influenciable: float, rizz: float) =
-        // diff rizz, gør om de har mere inflydelse
-        // This is a minimal implementation of Participant. You are welcome to
-        // add your own fields, functions, properties and methods.
+    static let mutable _latestID = 0u
+    do _latestID <- _latestID + 1u
+    let _id = _latestID
 
-        // Replace _id code with your own for generating a unique unsigned
-        // integer for each participant
-        static let mutable _latestID = 0u // Make a static konstruktor
-        do _latestID <- _latestID + 1u //have the class + 1, so that for every new participant, they get a unique id
-        let _id = _latestID //
-        let mutable _politicalview = politicalview
-        let mutable _influenciable = influenciable
-        let mutable _rizz = rizz
+    let mutable _politicalview = politicalview
+    
+    let _influenciable = influenciable
+    let _rizz = rizz
+    let _name = name
 
-        interface System.IComparable with
-            member this.CompareTo something =
-                match something with
-                | :? Participant as other -> this.Id.CompareTo other.Id
-                | _ -> -1
-
-        override this.GetHashCode() = this.Id.GetHashCode()
-        override this.Equals(something) =
+    interface System.IComparable with
+        member this.CompareTo something =
             match something with
-            | :? Participant as other -> this.Id.Equals other.Id
-            | _ -> false
+            | :? Participant as other -> this.Id.CompareTo other.Id
+            | _ -> -1
 
-        member this.Id = _id
+    override this.GetHashCode() = this.Id.GetHashCode()
+    override this.Equals(something) =
+        match something with
+        | :? Participant as other -> this.Id.Equals other.Id
+        | _ -> false
 
-        // Update such that PoliticalView and Influenciable are restricted to the 
-        // interval [0,1].
+    member this.Id = _id
 
-        // 
-        member this.influenciable 
-            with get() = _influenciable
-            and set(value) =
-                if value < 0.0 then // if value smaller than 0.0, then we clamp it to 0.0
-                    _influenciable <- 0.0
-                elif value > 1.0 then 
-                    _influenciable <- 1.0 //If value larger than 1.0 then we clamp it to be 1.0
-                else 
-                    _influenciable <- value
-
-        member this.politicalView 
-            with get() = _politicalview
-            and set(value) =
-                if value < 0.0 then
-                    _politicalview <- 0.0
-                elif value > 1.0 then 
-                    _politicalview <- 1.0
-                else 
-                    _politicalview <- value
-
-
-        member this.rizz
-            with get() = _rizz
-            and set(value) =
-                if value < 0.0 then 
-                    _rizz <- 0.0
-                elif value > 1.0 then
-                    _rizz <- 1.0
-                else
-                    _rizz <- value
-
-        abstract member MatchScore: other: Participant -> float
-        default this.MatchScore other = 
-            let diff = this.politicalView-other.politicalView
-            1.0 - (System.Math.Abs diff)
-
-            
-        abstract member OnInteraction: other:Participant -> isAMatch:bool -> float
-        default this.OnInteraction other isAMatch = 
-            let difference = other.politicalView-this.politicalView  
-            let influenceStrength = this.influenciable* other.rizz
-            if isAMatch then
-                difference * influenceStrength // Moves towards the other person (Positiv)
+    member this.politicalView 
+        with get() = _politicalview
+        and set(value) =
+            if value < 0.0 then
+                _politicalview <- 0.0
+            elif value > 1.0 then 
+                _politicalview <- 1.0
             else 
-                difference * influenceStrength * (-1.0) // political view moves away from eachother
+                _politicalview <- value
 
-    //////////////////////////////////////////////////////////////////////////
+    member this.influenciable = _influenciable
 
-    // Normal person, bevæger sig normalt
-    type Normal(name: string, politicalview: float, influenciable: float, rizz: float) =
-        inherit Participant(name, politicalview, influenciable, rizz)
+    member this.rizz = _rizz
 
+    member this.name = _name
 
-    // Copycat person, bliver bare det samme som den person de møder.
-    type CopyCat(name: string, politicalview: float, influenciable: float, rizz: float) =
-        inherit Participant(name, politicalview, influenciable, rizz)
-        override this.OnInteraction other isAMatch =
-            let difference = other.politicalView-this.politicalView 
-            difference * this.influenciable
-
-
-    // Skeptic person, er meget uvillig til at bevæge sig.
-    type Skeptic(name: string, politicalview: float, influenciable: float, rizz: float) =
-        inherit Participant(name, politicalview, influenciable, rizz)
-
-        override this.OnInteraction other isAMatch =
-            let difference = other.politicalView - this.politicalView
-            difference * this.influenciable * (-1.0)
-
-    let createMatrix(participantList: Participant List) =
-        let mutable edgeMatrix = [||]
-        for i in 0..participantList.Length - 1 do
-            for person in participantList |> List.filter (fun p -> p.Id > uint i) do
-                let agreeablity = person.MatchScore (participantList[i]) > 0.5
-                edgeMatrix <- Array.append edgeMatrix [|(person.Id, participantList[i].Id, agreeablity)|]
-        edgeMatrix
+    abstract member OnInteraction: other: Participant -> isAMatch : bool -> float
+    default this.OnInteraction other isAMatch =  
+        let politicalViewDistance = other.politicalView - this.politicalView
+        let influenceStrength = 0.5 * this.influenciable + 0.5 * other.rizz - 1.0
+        let moveAmount = influenceStrength * (politicalViewDistance * politicalViewDistance) + abs(politicalViewDistance)
+        if politicalViewDistance > 0 then (moveAmount * 0.25)
+        else (-moveAmount * 0.25)
 
 
-    let participant_list: Participant list = [
-        CopyCat("David", 0.90, 0.01, 0.0);
-        CopyCat("Linda",0.36, 0.04, 0.0);
-        Skeptic("Patricia", 0.32, 0.07, 0.0);
-        Normal("Thomas", 0.09, 0.06, 0.0);
-        CopyCat("Jessica", 0.63, 0.01, 0.0);
-        Normal("Christopher", 0.98, 0.05, 0.1);
-        Skeptic("Elizabeth", 0.89, 0.04, 0.02);
-        Normal("David", 0.78, 0.08, 0.01);
-        Skeptic("Charlie Kirk", 1.0, 0.0, 1.0);
-        Normal("Elizabeth", 0.89, 0.04, 0.10)
-    ]
+    abstract member MatchScore: other: Participant -> float
+    default this.MatchScore other = 
+        let politicalViewDistance = this.politicalView - other.politicalView
+        1.0 - (abs politicalViewDistance)
 
-    createMatrix participant_list |> printfn "%A"
+
+// Normal person, bevæger sig normalt
+type Normal(name: string, politicalview: float, influenciable: float, rizz: float) =
+    inherit Participant(name, politicalview, influenciable, rizz)
+
+
+// Copycat person, bliver bare det samme som den person de møder.
+type CopyCat(name: string, politicalview: float, influenciable: float, rizz: float) =
+    inherit Participant(name, politicalview, influenciable, rizz)
+    override this.OnInteraction other isAMatch =
+        let politicalViewDistance = other.politicalView - this.politicalView 
+        let influenceStrength = this.influenciable * other.rizz
+        politicalViewDistance * influenceStrength
+
+
+// Skeptic person, er meget uvillig til at bevæge sig.
+type Skeptic(name: string, politicalview: float, influenciable: float, rizz: float) =
+    inherit Participant(name, politicalview, influenciable, rizz)
+    override this.OnInteraction other isAMatch =
+        let politicalViewDistance = other.politicalView - this.politicalView
+        let influenceStrength = this.influenciable * other.rizz
+        politicalViewDistance * influenceStrength * (-1.0)
+
+type SimulationState = {
+    Participants : Participant list
+    Log          : string list
+    Runde        : int   
+}
+
+let simulateMeeting(participantList: Participant List) : Participant * Participant * bool =
+    let person1, person2 = 
+        match participantList |> List.randomSample 2 with
+        | [person1; person2] -> person1, person2
+        | _ -> failwith "Expected 2 values"
+
+    let isAMatch = person1.MatchScore person2 > 0.5
+
+    let p1PoliticalMovement = person1.OnInteraction person2 isAMatch
+    let p2PoliticalMovement = person2.OnInteraction person1 isAMatch
+
+    person1.politicalView <- person1.politicalView + p1PoliticalMovement
+    person2.politicalView <- person2.politicalView + p2PoliticalMovement
+
+    person1, person2, isAMatch
+
+
+let createEdgeMatrix(participantList: Participant List) =
+    let mutable edgeMatrix = [||]
+    for i in 0..participantList.Length - 1 do
+        for person in participantList |> List.filter (fun p -> p.Id > uint i+1u) do
+            let agreeablity = person.MatchScore (participantList[i]) > 0.5
+            edgeMatrix <- Array.append edgeMatrix [|(person, participantList[i], agreeablity)|]
+    edgeMatrix
+
+
+let createGraph (participants: Participant List) (connections: (Participant * Participant * bool) array) : Graph<Participant> =
+    let emptyGraph : Graph<Participant> = empty
+    
+    let participantGraphOnlyVertices =
+        participants
+        |> List.fold (fun g v -> addVertex v g) emptyGraph
+
+    let completeParticipantGraph =
+        connections
+        |> Array.fold (fun g (u, v, x) ->
+            if x then addEdge u v g
+            else g
+            ) participantGraphOnlyVertices
+
+    completeParticipantGraph
+
+// Render // Render // Render // Render
+let circleRadius = 35.0
+let outerRadius = 250.0
+let dAngle = 0.1
+
+let pointPolar (x1,x2) (r,t) =
+    x1 + r * cos t, x2 + r * sin t
+
+// Funktion der tegner en linje mellem 2 punkter, baseret på circleRadius.
+let line color center (a1,a2) =
+    let p0 = pointPolar center (circleRadius, a1)
+    let p1 = pointPolar center (circleRadius, a2)
+    piecewiseAffine color 1.0 [p0; p1]
+
+// Funktion der tegner en normal cirkle.
+let makeCircle color center =
+    let rec loop pair =
+        if snd pair <= 2.0 * Math.PI then
+            let nextPair = snd pair, dAngle + snd pair
+            onto (line color center pair) (loop nextPair)
+        else
+            let finalPair = (fst pair, 2.0 * Math.PI)
+            line color center finalPair
+    loop (0.0, dAngle)
+
+// Funktion der tegner og samler alle de forskellige dele af grafen.
+let buildPicture (state: SimulationState) (midPoint : float * float) : Picture =
+    let numberOfCircles = state.Participants.Length
+    let fontName = "Microsoft Sans Serif"
+    let font = makeFont fontName 14.0
+
+    // Funktion der returnere en liste med personer, midten af deres circle og deres circle PrimitiveTree.
+    let circleData = 
+        state.Participants 
+        |> List.mapi (fun i person ->
+            let placementAngle = 2.0 * Math.PI / float numberOfCircles * float i
+            let xOffset = outerRadius * cos placementAngle
+            let yOffset = outerRadius * sin placementAngle
+            let center = fst midPoint + xOffset, snd midPoint + yOffset
+
+            // VÆLG FARVE baseret på politicalView
+            let color = if person.politicalView > 0.5 then blue else red
+
+            // Lav cirkel med den farve
+            let circleTree = makeCircle color center
+            person, center, circleTree
+        )
+    
+    // Funktion der returnere alle circleTree fra circleData listen.
+    let circles =
+        circleData
+        |> List.map (fun (_, _, circleTree) -> circleTree)
+
+    // Giver en liste med circle midt koordinaterne baseret på person ID.
+    let centerOf =
+        circleData
+        |> List.map (fun (p, center, _) -> p.Id, center)
+        |> Map.ofList
+    
+    // Funktion der tegner kanten mellem to cirkler
+    let makeEdgeLine (c1x, c1y) (c2x, c2y) =
+        let distanceOnXAxis = c2x - c1x
+        let distanceOnYAxis = c2y - c1y
+        let distance = sqrt (distanceOnXAxis*distanceOnXAxis + distanceOnYAxis*distanceOnYAxis)
+        if distance = 0.0 then
+            emptyTree  // Hvis to punkter er identiske
+        else
+            // Enhedsvektor fra midten af circle 1 og midten af circle 2
+            let ratioOnXAxis = distanceOnXAxis / distance
+            let ratioOnYAxis = distanceOnYAxis / distance
+
+            // Start og slut skubbes ind så linjen starter/slutter på cirkelkanten
+            let startPoint = c1x + ratioOnXAxis * circleRadius, c1y + ratioOnYAxis * circleRadius
+            let endPoint   = c2x - ratioOnXAxis * circleRadius, c2y - ratioOnYAxis * circleRadius
+
+            piecewiseAffine white 1.0 [startPoint; endPoint]
+    
+    // Funktion til at lave kanten tegninger ud fra edgeMatrix
+    let edgeLines =
+        createEdgeMatrix state.Participants
+        |> Array.choose (fun (person1, person2, isMatch) ->
+            if isMatch then
+                let person1CenterCoordinates = centerOf[person1.Id]
+                let person2CenterCoordinates = centerOf[person2.Id]
+                Some (makeEdgeLine person1CenterCoordinates person2CenterCoordinates)
+            else
+                None)
+        |> Array.toList
+    
+    // Funktion til at skrive alle politicalViews i de rigtige bobler
+    let drawPoliticalViews =
+        circleData
+        |> List.map (fun (p, (x,y), _) ->
+            let politicalViewString = (p.politicalView.ToString())[..4]
+            let textSize = measureText font politicalViewString
+            let textOffsetX = (fst textSize)/2.
+            let textOffsetY = (snd textSize)/2.
+            text white font (politicalViewString)
+            |> translate (x - textOffsetX) (y - textOffsetY)
+        )
+
+    // Funktion der viser skriver tallet der viser hvor mange TimerTick events har kørt
+    let showrunde = 
+        let rundeTekst = state.Runde.ToString()
+        let textSize = measureText font rundeTekst
+        let textOffset = (snd textSize) * 1.5
+        text white font ("runde: " + rundeTekst)
+        |> translate 0 (700.0 - textOffset)
+
+    let logLinesTrees =
+        state.Log
+        |> List.truncate 1    // hvor mange logs der er 
+        |> List.mapi (fun i line ->
+            text white font line
+        )
+
+    // Laver figuren så den inderholder alle Primitive Trees circles, edgelines, politicalView tekst og runde tekst
+    let fig = 
+        circles @ edgeLines @ drawPoliticalViews @ [showrunde] @ logLinesTrees
+        |> List.fold (fun acc x -> onto x acc) emptyTree
+
+    make fig 
+
+// Funktion der håndtere hvert TimerTick, interval, kører simulateMeeting med participants liste.
+let react (state: SimulationState) (ev: Event) : SimulationState option =
+    let comps = connectedComponents (createGraph state.Participants (createEdgeMatrix state.Participants))
+    match ev with
+    | Event.TimerTick ->
+        let p1, p2, isMatch = simulateMeeting state.Participants
+        let msg = 
+            sprintf "%s møder %s (match=%b, views=%.2f og %.2f)"
+                p1.name p2.name isMatch p1.politicalView p2.politicalView
+        let newLog = 
+            msg :: state.Log
+            |> List.truncate 2
+        Some { state with Log = newLog; Runde = state.Runde + 1}
+    | _ ->
+        None
+
+// Funktion vi kalder fra meetUpExamples.fsx filen.
+let runSimulation(participantList: Participant List) (width: int, height: int) (interval: int Option) =
+    let midPoint = float width * 0.5, float height * 0.5
+
+    let initialState : SimulationState =
+        { Participants = participantList
+          Log = [] 
+          Runde = 0}
+
+    let draw (state: SimulationState): Picture = 
+        buildPicture state midPoint
+    
+    interact "Graf" width height interval draw react initialState
