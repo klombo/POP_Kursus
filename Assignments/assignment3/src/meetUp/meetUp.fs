@@ -6,7 +6,7 @@ open Color
 open System
 
 [<AbstractClass>]
-type Participant (name: string, politicalview: float, influenciable: float, rizz: float) =
+type Participant (name: string, politicalview: float, influenciable: float, charisma: float) =
 
     static let mutable _latestID = 0u
     do _latestID <- _latestID + 1u
@@ -15,7 +15,7 @@ type Participant (name: string, politicalview: float, influenciable: float, rizz
     let mutable _politicalview = politicalview
     
     let _influenciable = influenciable
-    let _rizz = rizz
+    let _charisma = charisma
     let _name = name
 
     interface System.IComparable with
@@ -44,14 +44,14 @@ type Participant (name: string, politicalview: float, influenciable: float, rizz
 
     member this.influenciable = _influenciable
 
-    member this.rizz = _rizz
+    member this.charisma = _charisma
 
     member this.name = _name
 
     abstract member OnInteraction: other: Participant -> isAMatch : bool -> float
     default this.OnInteraction other isAMatch =  
         let politicalViewDistance = other.politicalView - this.politicalView
-        let influenceStrength = 0.5 * this.influenciable + 0.5 * other.rizz - 1.0
+        let influenceStrength = this.influenciable * other.charisma - 1.0
         let moveAmount = influenceStrength * (politicalViewDistance * politicalViewDistance) + abs(politicalViewDistance)
         if politicalViewDistance > 0 then (moveAmount * 0.25)
         else (-moveAmount * 0.25)
@@ -64,25 +64,25 @@ type Participant (name: string, politicalview: float, influenciable: float, rizz
 
 
 // Normal person, bevæger sig normalt
-type Normal(name: string, politicalview: float, influenciable: float, rizz: float) =
-    inherit Participant(name, politicalview, influenciable, rizz)
+type Normal(name: string, politicalview: float, influenciable: float, charisma: float) =
+    inherit Participant(name, politicalview, influenciable, charisma)
 
 
 // Copycat person, bliver bare det samme som den person de møder.
-type CopyCat(name: string, politicalview: float, influenciable: float, rizz: float) =
-    inherit Participant(name, politicalview, influenciable, rizz)
+type CopyCat(name: string, politicalview: float, influenciable: float, charisma: float) =
+    inherit Participant(name, politicalview, influenciable, charisma)
     override this.OnInteraction other isAMatch =
         let politicalViewDistance = other.politicalView - this.politicalView 
-        let influenceStrength = this.influenciable * other.rizz
+        let influenceStrength = this.influenciable * other.charisma
         politicalViewDistance * influenceStrength
 
 
 // Skeptic person, er meget uvillig til at bevæge sig.
-type Skeptic(name: string, politicalview: float, influenciable: float, rizz: float) =
-    inherit Participant(name, politicalview, influenciable, rizz)
+type Skeptic(name: string, politicalview: float, influenciable: float, charisma: float) =
+    inherit Participant(name, politicalview, influenciable, charisma)
     override this.OnInteraction other isAMatch =
         let politicalViewDistance = other.politicalView - this.politicalView
-        let influenceStrength = this.influenciable * other.rizz
+        let influenceStrength = this.influenciable * other.charisma
         politicalViewDistance * influenceStrength * (-1.0)
 
 type SimulationState = {

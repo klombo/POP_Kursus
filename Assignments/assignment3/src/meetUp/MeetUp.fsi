@@ -3,7 +3,7 @@ module MeetUp
 [<AbstractClass>]
 type Participant =
     interface System.IComparable
-    new: name: string * politicalview: float * influenciable: float * rizz: float -> Participant
+    new: name: string * politicalview: float * influenciable: float * charisma: float -> Participant
     override Equals: something: obj -> bool
     override GetHashCode: unit -> int
     abstract MatchScore: other: Participant -> float
@@ -12,20 +12,20 @@ type Participant =
     member influenciable: float
     member name: string
     member politicalView: float with get, set
-    member rizz: float
+    member charisma: float
 
 type Normal =
     inherit Participant
-    new: name: string * politicalview: float * influenciable: float * rizz: float -> Normal
+    new: name: string * politicalview: float * influenciable: float * charisma: float -> Normal
 
 type CopyCat =
     inherit Participant
-    new: name: string * politicalview: float * influenciable: float * rizz: float -> CopyCat
+    new: name: string * politicalview: float * influenciable: float * charisma: float -> CopyCat
     override OnInteraction: other: Participant -> isAMatch: bool -> float
 
 type Skeptic =
     inherit Participant
-    new: name: string * politicalview: float * influenciable: float * rizz: float -> Skeptic
+    new: name: string * politicalview: float * influenciable: float * charisma: float -> Skeptic
     override OnInteraction: other: Participant -> isAMatch: bool -> float
 
 type SimulationState =
