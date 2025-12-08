@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("MeetUp")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6447cb3109950242d29230559944e2251b16d6d")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74adfb4ae0cb8b75c18446288a240c22fd3fa161")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("MeetUp")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("MeetUp")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

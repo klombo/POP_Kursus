@@ -55,4 +55,4 @@ val buildPicture: SimulationState -> (float * float) -> Canvas.Picture
 
 val react: state: SimulationState -> ev: Canvas.Event -> SimulationState option
 
-val runSimulation: Participant List -> int * int -> int Option -> unit
+val runSimulation: Participant List -> unit
