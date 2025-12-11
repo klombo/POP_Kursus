@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj": {}
+    "C:\\Users\\kleme\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj": {
+    "C:\\Users\\kleme\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj",
-        "projectName": "MeetUp",
-        "projectPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj",
+        "projectUniqueName": "C:\\Users\\kleme\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj",
+        "projectName": "meetUp",
+        "projectPath": "C:\\Users\\kleme\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj",
         "packagesPath": "C:\\Users\\kleme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\obj\\",
+        "outputPath": "C:\\Users\\kleme\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\9.0.306\\FSharp\\library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\9.0.304\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

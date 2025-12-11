@@ -7,11 +7,11 @@ open System
 open System.Reflection
 
 
-[<assembly: System.Reflection.AssemblyCompanyAttribute("MeetUp")>]
+[<assembly: System.Reflection.AssemblyCompanyAttribute("meetUp")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+067fafb09f594b3fd2558deb5b904d872bf2c4e0")>]
-[<assembly: System.Reflection.AssemblyProductAttribute("MeetUp")>]
-[<assembly: System.Reflection.AssemblyTitleAttribute("MeetUp")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6447cb3109950242d29230559944e2251b16d6d")>]
+[<assembly: System.Reflection.AssemblyProductAttribute("meetUp")>]
+[<assembly: System.Reflection.AssemblyTitleAttribute("meetUp")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
 do()

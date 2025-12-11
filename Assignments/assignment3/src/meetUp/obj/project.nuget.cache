@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XuXTPXGLWY4=",
+  "dgSpecHash": "8I5BJe+zmgI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj",
+  "projectFilePath": "C:\\Users\\kleme\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\meetUp.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\kleme\\.nuget\\packages\\diku.canvas\\2.0.4\\diku.canvas.2.0.4.nupkg.sha512",
     "C:\\Users\\kleme\\.nuget\\packages\\diku.graph\\1.0.0\\diku.graph.1.0.0.nupkg.sha512",
