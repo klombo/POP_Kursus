@@ -169,6 +169,7 @@
   },
   "active": "088526854074c4af",
   "lastOpenFiles": [
+    "exercises/graphExample.fsx",
     "exercises/dam/obj/Debug/net9.0/dam.AssemblyInfo.fs",
     "exercises/dam/obj/Debug/net9.0/dam.AssemblyInfoInputs.cache",
     "exercises/dam/obj/Debug/net9.0/ref",
@@ -179,7 +180,6 @@
     "exercises/dam/obj/Debug/net9.0",
     "exercises/dam/obj/Debug",
     "exercises/dam/obj",
-    "exercises/dam/dam.fs",
     "999_Exercise_Notes/Deliberate_Practice_W3.md",
     "999_Exercise_Notes/Deliberate_Pratice_W10.md",
     "999_Exercise_Notes/Deliberate_Practice_W2.md",
