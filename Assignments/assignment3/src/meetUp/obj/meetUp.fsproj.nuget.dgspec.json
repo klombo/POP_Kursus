@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj": {}
+    "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\MeetUp.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj": {
+    "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\MeetUp.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj",
+        "projectUniqueName": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\MeetUp.fsproj",
         "projectName": "MeetUp",
-        "projectPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\MeetUp.fsproj",
+        "projectPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\MeetUp.fsproj",
         "packagesPath": "C:\\Users\\kleme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetup\\obj\\",
+        "outputPath": "C:\\Users\\kleme\\Uni_Kurser\\POP_Kursus\\Assignments\\assignment3\\src\\meetUp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kleme\\AppData\\Roaming\\NuGet\\NuGet.Config"
