@@ -258,7 +258,6 @@ let buildPicture (state: SimulationState) (midPoint : float * float) : Picture =
 
 // Funktion der håndtere hvert TimerTick, interval, kører simulateMeeting med participants liste.
 let react (state: SimulationState) (ev: Event) : SimulationState option =
-    let comps = connectedComponents (createGraph state.Participants (createEdgeMatrix state.Participants))
     match ev with
     | Event.TimerTick ->
         let p1, p2, isMatch = simulateMeeting state.Participants
@@ -276,7 +275,11 @@ let react (state: SimulationState) (ev: Event) : SimulationState option =
 let runSimulation(participantList: Participant List)=
     let width = 700
     let height = 700
-    let interval = (Some 100)
+<<<<<<< HEAD
+    let interval = (Some 250)
+=======
+    let interval = (Some 250)
+>>>>>>> 6a7eaae511187cd801ba904c916f97356b9c77ea
     let midPoint = float width * 0.5, float height * 0.5
 
     let initialState : SimulationState =
