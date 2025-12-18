@@ -276,7 +276,7 @@ let react (state: SimulationState) (ev: Event) : SimulationState option =
 let runSimulation(participantList: Participant List)=
     let width = 700
     let height = 700
-    let interval = (Some 10000)
+    let interval = (Some 100)
     let midPoint = float width * 0.5, float height * 0.5
 
     let initialState : SimulationState =

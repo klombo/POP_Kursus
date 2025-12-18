@@ -62,10 +62,10 @@ let SimulationWithNoVisual (listOfParticipants: Participant List) =
     printPoliticalView listOfParticipants
 
 
-// runSimulation exampleList
-SimulationWithNoVisual exampleList
-SimulationWithNoVisual exampleList
-SimulationWithNoVisual exampleList
+runSimulation exampleList
+// SimulationWithNoVisual exampleList
+// SimulationWithNoVisual exampleList
+// SimulationWithNoVisual exampleList
 
 
 // runSimulation onlyNormalList
