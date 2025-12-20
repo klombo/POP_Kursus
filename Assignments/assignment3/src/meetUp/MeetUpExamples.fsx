@@ -1,6 +1,11 @@
-#load "MeetUp.fs"
-#load "MeetUp.fsi"
+#r "nuget:DIKU.Graph, 1.0.0"
+#r "nuget:DIKU.Canvas"
 
+#load "MeetUp.fs"
+
+open simpleGraph
+open Canvas
+open Color
 open MeetUp
 
 let exampleList: Participant List = [

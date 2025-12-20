@@ -147,7 +147,7 @@ let pointPolar (x1,x2) (r,t) =
 let line color center (a1,a2) : PrimitiveTree =
     let point0 = pointPolar center (circleRadius, a1)
     let point1 = pointPolar center (circleRadius, a2)
-    piecewiseAffine color 1.0 [point0; poinnt1]
+    piecewiseAffine color 1.0 [point0; point1]
 
 // Funktion der tegner en normal cirkle.
 let makeCircle color center =
