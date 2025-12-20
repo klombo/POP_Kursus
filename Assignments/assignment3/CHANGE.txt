@@ -1,0 +1,14 @@
+[+/-] Test describes the test strategy
+I am missing a bit of a 'why' here. The decisions need to clearer.
+[-] Resume is included and briefly restates the major elements of the report
+
+To adress the feedback 'You should practice more consistency in your function descriptions.'
+    - I added labels in the .fs file for the functions that were missing.
+    - I also labeled the types on the inputs and outputs which were missing from some of the functions.
+
+To adress the feedback 'I can run 'dotnet run' but I actually can't run meetUpExamples.fsx by itself through dotnet fsi.'
+    - I added #r nuget for both of the libraries, Canvas and simpleGraph, at the top of meetUpExamples.fsx, 
+    - this is because when we run meetUpExamples.fsx with dotnet fsi, it doesn't run the .fsproj file which imports both of the libraries.
+    - Needs to be at the top because, when we open the meetUp module it attempts to open the libraries.
+
+Can you for resub make it easier to test your text-version? Thanks!
