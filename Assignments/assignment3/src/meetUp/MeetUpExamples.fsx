@@ -3,9 +3,6 @@
 
 #load "MeetUp.fs"
 
-open simpleGraph
-open Canvas
-open Color
 open MeetUp
 
 let exampleList: Participant List = [
@@ -20,8 +17,6 @@ let exampleList: Participant List = [
     Normal("Queen Elizabeth", 0.92, 0.52, 0.51);
     Skeptic("Charlie Kirk", 1.0, 0.09, 1.0)
 ]
-
-
 
 let SimulationWithNoVisual (listOfParticipants: Participant List) (amountOfRounds:int) =
     printfn "\n"
