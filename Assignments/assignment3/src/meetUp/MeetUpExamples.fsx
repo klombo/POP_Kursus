@@ -50,16 +50,9 @@ let testTypes =
             |> printfn "when %s with politicalView: %A, meets %s with politicalView: %A, then amount moved: %A." 
                 testList[i].name testList[i].politicalView testList[j].name testList[j].politicalView 
 
-<<<<<<< HEAD
-runSimulation exampleList
-// SimulationWithNoVisual exampleList
-// SimulationWithNoVisual exampleList
-// SimulationWithNoVisual exampleList
-=======
 testTypes
-SimulationWithNoVisual exampleList 10000
+SimulationWithNoVisual exampleList 100
 runSimulation exampleList
->>>>>>> 6a7eaae511187cd801ba904c916f97356b9c77ea
 
 
 

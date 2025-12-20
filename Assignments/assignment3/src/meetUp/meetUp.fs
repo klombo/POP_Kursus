@@ -85,12 +85,14 @@ type Skeptic(name: string, politicalview: float, influenciable: float, charisma:
         let influenceStrength = this.influenciable * other.charisma
         politicalViewDistance * influenceStrength * (-1.0)
 
+// En type der gemmer particpant list, de seneste møder og runde antal.
 type SimulationState = {
     Participants : Participant list
     Log          : string list
     Runde        : int   
 }
 
+// Funktion der simulere mødet mellem to personer.
 let simulateMeeting(participantList: Participant List) : Participant * Participant * bool =
     let person1, person2 = 
         match participantList |> List.randomSample 2 with
@@ -107,8 +109,8 @@ let simulateMeeting(participantList: Participant List) : Participant * Participa
 
     person1, person2, isAMatch
 
-
-let createEdgeMatrix(participantList: Participant List) =
+// laver Array, som indeholder hvilke kanter der skal tegnes mellem hvilke personer
+let createEdgeMatrix(participantList: Participant List) : (Participant* Participant * bool) array =
     let mutable edgeMatrix = [||]
     for i in 0..participantList.Length - 1 do
         for person in participantList |> List.filter (fun p -> p.Id > uint i+1u) do
@@ -116,7 +118,7 @@ let createEdgeMatrix(participantList: Participant List) =
             edgeMatrix <- Array.append edgeMatrix [|(person, participantList[i], agreeablity)|]
     edgeMatrix
 
-
+// Funktion der laver grafen med forbindelserne mellem de forskellige personer.
 let createGraph (participants: Participant List) (connections: (Participant * Participant * bool) array) : Graph<Participant> =
     let emptyGraph : Graph<Participant> = empty
     
@@ -142,10 +144,10 @@ let pointPolar (x1,x2) (r,t) =
     x1 + r * cos t, x2 + r * sin t
 
 // Funktion der tegner en linje mellem 2 punkter, baseret på circleRadius.
-let line color center (a1,a2) =
-    let p0 = pointPolar center (circleRadius, a1)
-    let p1 = pointPolar center (circleRadius, a2)
-    piecewiseAffine color 1.0 [p0; p1]
+let line color center (a1,a2) : PrimitiveTree =
+    let point0 = pointPolar center (circleRadius, a1)
+    let point1 = pointPolar center (circleRadius, a2)
+    piecewiseAffine color 1.0 [point0; poinnt1]
 
 // Funktion der tegner en normal cirkle.
 let makeCircle color center =
@@ -242,6 +244,7 @@ let buildPicture (state: SimulationState) (midPoint : float * float) : Picture =
         text white font ("runde: " + rundeTekst)
         |> translate 0 (700.0 - textOffset)
 
+    // Funktion der skriver det seneste møde på skræmen.
     let logLinesTrees =
         state.Log
         |> List.truncate 1    // hvor mange logs der er 
@@ -275,11 +278,7 @@ let react (state: SimulationState) (ev: Event) : SimulationState option =
 let runSimulation(participantList: Participant List)=
     let width = 700
     let height = 700
-<<<<<<< HEAD
     let interval = (Some 250)
-=======
-    let interval = (Some 250)
->>>>>>> 6a7eaae511187cd801ba904c916f97356b9c77ea
     let midPoint = float width * 0.5, float height * 0.5
 
     let initialState : SimulationState =
