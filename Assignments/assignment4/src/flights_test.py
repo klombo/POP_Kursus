@@ -1,54 +1,59 @@
 import flights
-# Empty Test List
-emptyList = [{}]
 
-# Test List with no ['name_ades']: Copenhagen or Ibiza
-generalTestList = [{'flight_id': '248763780', 'date': '2022-01-01', 'callsign': '3840d84f25d3f5fcc0a1be3076bb4039', 'adep': 'EGLL', 'name_adep': 'London Heathrow', 'country_code_adep': 'GB', 'ades': 'EICK', 'name_ades': 'Cork', 'country_code_ades': 'IE', 'actual_offblock_time': '2022-01-01T13:46:00Z', 'arrival_time': '2022-01-01T15:04:56Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'a73f82288988b79be490c6322f4c32ed', 'flight_duration': '61', 'taxiout_time': '18', 'flown_distance': '321', 'tow': '54748'}, 
-                    {'flight_id': '248760618', 'date': '2022-01-01', 'callsign': 'f6f610e73002b8892a239a81321f7f1d', 'adep': 'LEBL', 'name_adep': 'Barcelona', 'country_code_adep': 'ES', 'ades': 'KMIA', 'name_ades': 'Miami', 'country_code_ades': 'US', 'actual_offblock_time': '2022-01-01T09:55:00Z', 'arrival_time': '2022-01-01T19:37:56Z', 'aircraft_type': 'B772', 'wtc': 'H', 'airline': '5543e4dc327359ffaf5b9c0e6faaf0e1', 'flight_duration': '570', 'taxiout_time': '13', 'flown_distance': '4193', 'tow': '185441'}, 
-                    {'flight_id': '248753824', 'date': '2022-01-01', 'callsign': '139670936660762c230ca92556ba842b', 'adep': 'ESSA', 'name_adep': 'Stockholm Arlanda', 'country_code_adep': 'SE', 'ades': 'KORD', 'name_ades': "Chicago O'Hare", 'country_code_ades': 'US', 'actual_offblock_time': '2022-01-01T09:39:00Z', 'arrival_time': '2022-01-01T19:08:13Z', 'aircraft_type': 'A333', 'wtc': 'H', 'airline': '8be5c854fd664bcb97fb543339f74770', 'flight_duration': '554', 'taxiout_time': '15', 'flown_distance': '3770', 'tow': '230396'}]
-# Test List with 2 ['name_ades']: Copenhagen 
-copenhagenTestList = [{'flight_id': '248763780', 'date': '2022-01-01', 'callsign': '3840d84f25d3f5fcc0a1be3076bb4039', 'adep': 'EGLL', 'name_adep': 'London Heathrow', 'country_code_adep': 'GB', 'ades': 'EICK', 'name_ades': 'Copenhagen', 'country_code_ades': 'IE', 'actual_offblock_time': '2022-01-01T13:46:00Z', 'arrival_time': '2022-01-01T15:04:56Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'a73f82288988b79be490c6322f4c32ed', 'flight_duration': '61', 'taxiout_time': '18', 'flown_distance': '321', 'tow': '54748'}, 
-                    {'flight_id': '248760618', 'date': '2022-01-01', 'callsign': 'f6f610e73002b8892a239a81321f7f1d', 'adep': 'LEBL', 'name_adep': 'Barcelona', 'country_code_adep': 'ES', 'ades': 'KMIA', 'name_ades': 'Miami', 'country_code_ades': 'US', 'actual_offblock_time': '2022-01-01T09:55:00Z', 'arrival_time': '2022-01-01T19:37:56Z', 'aircraft_type': 'B772', 'wtc': 'H', 'airline': '5543e4dc327359ffaf5b9c0e6faaf0e1', 'flight_duration': '570', 'taxiout_time': '13', 'flown_distance': '4193', 'tow': '185441'}, 
-                    {'flight_id': '248753824', 'date': '2022-04-01', 'callsign': '139670936660762c230ca92556ba842b', 'adep': 'ESSA', 'name_adep': 'Stockholm Arlanda', 'country_code_adep': 'SE', 'ades': 'KORD', 'name_ades': "Copenhagen", 'country_code_ades': 'US', 'actual_offblock_time': '2022-01-01T09:39:00Z', 'arrival_time': '2022-01-01T19:08:13Z', 'aircraft_type': 'A333', 'wtc': 'H', 'airline': '8be5c854fd664bcb97fb543339f74770', 'flight_duration': '554', 'taxiout_time': '15', 'flown_distance': '3770', 'tow': '230396'}]
-# Test List
+emptyList = []
 
+# Test List where none of the conditions are meet meaning it should give zero for all the functions
+generalTestList = [
+    {'flight_id': '111', 'date': '2022-02-10', 'callsign': 'abc', 'adep': 'EGLL', 'name_adep': 'London Heathrow', 'country_code_adep': 'GB', 'ades': 'LFPG', 'name_ades': 'Paris', 'country_code_ades': 'FR', 'actual_offblock_time': '2022-02-10T10:00:00Z', 'arrival_time': '2022-02-10T12:00:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '120', 'taxiout_time': '15', 'flown_distance': '340', 'tow': '60000'}
+]
 
-# - what was the total number of flights landing in Copenhagen per month?
-# - from which cities departed flights to Ibiza?
-# - how many flights flew in Spring 2022 (March 20ty - June 21st both included)
+# Two name_ades = Copenhagen
+twoCopenhagenTestList = [
+    {'flight_id': '248763780', 'date': '2022-01-01', 'callsign': '3840d84f25d3f5fcc0a1be3076bb4039', 'adep': 'EGLL', 'name_adep': 'London Heathrow', 'country_code_adep': 'GB', 'ades': 'EICK', 'name_ades': 'Copenhagen', 'country_code_ades': 'IE', 'actual_offblock_time': '2022-01-01T13:46:00Z', 'arrival_time': '2022-01-01T15:04:56Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '61', 'taxiout_time': '18', 'flown_distance': '321', 'tow': '54748'},
+    {'flight_id': '248753824', 'date': '2022-04-01', 'callsign': '139670936660762c230ca92556ba842b', 'adep': 'ESSA', 'name_adep': 'Stockholm Arlanda', 'country_code_adep': 'SE', 'ades': 'KORD', 'name_ades': 'Copenhagen', 'country_code_ades': 'US', 'actual_offblock_time': '2022-01-01T09:39:00Z', 'arrival_time': '2022-01-01T19:08:13Z', 'aircraft_type': 'A333', 'wtc': 'H', 'airline': 'test', 'flight_duration': '554', 'taxiout_time': '15', 'flown_distance': '3770', 'tow': '230396'}
+]
 
-# !!! GENERAL TESTS !!!
-# - Test empty flightList list with dict
+# Two name_ades = Ibiza and name_adep = Barcelona and name_adep = Madrid
+ibizaDifferentAdepTestList = [
+    {'flight_id': '301', 'date': '2022-06-01', 'callsign': 'ibz1', 'adep': 'MAD', 'name_adep': 'Madrid', 'country_code_adep': 'ES', 'ades': 'LEIB', 'name_ades': 'Ibiza', 'country_code_ades': 'ES', 'actual_offblock_time': '2022-06-01T08:00:00Z', 'arrival_time': '2022-06-01T09:10:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '70', 'taxiout_time': '10', 'flown_distance': '300', 'tow': '60000'},
+    {'flight_id': '302', 'date': '2022-06-05', 'callsign': 'ibz2', 'adep': 'BCN', 'name_adep': 'Barcelona', 'country_code_adep': 'ES', 'ades': 'LEIB', 'name_ades': 'Ibiza', 'country_code_ades': 'ES', 'actual_offblock_time': '2022-06-05T11:00:00Z', 'arrival_time': '2022-06-05T12:15:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '75', 'taxiout_time': '12', 'flown_distance': '310', 'tow': '61000'}
+]
 
-# !!! Destination Copenhagen !!!
-# - Test for empty flightList
-# - Tests with small dataset
-# - Test with no Copenhagen == 0
-# - Test with 2 Copenhagen in different months 
+# Two name_ades = Ibiza and Two name_adep = Madrid
+ibizaDuplicateAdepTestList = [
+    {'flight_id': '301', 'date': '2022-06-01', 'callsign': 'ibz1', 'adep': 'MAD', 'name_adep': 'Madrid', 'country_code_adep': 'ES', 'ades': 'LEIB', 'name_ades': 'Ibiza', 'country_code_ades': 'ES', 'actual_offblock_time': '2022-06-01T08:00:00Z', 'arrival_time': '2022-06-01T09:10:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '70', 'taxiout_time': '10', 'flown_distance': '300', 'tow': '60000'},
+    {'flight_id': '302', 'date': '2022-06-05', 'callsign': 'ibz2', 'adep': 'BCN', 'name_adep': 'Madrid', 'country_code_adep': 'ES', 'ades': 'LEIB', 'name_ades': 'Ibiza', 'country_code_ades': 'ES', 'actual_offblock_time': '2022-06-05T11:00:00Z', 'arrival_time': '2022-06-05T12:15:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '75', 'taxiout_time': '12', 'flown_distance': '310', 'tow': '61000'}
+]
 
-# !!! Flights to Ibiza !!!
-# - Test for empty flightList
-# - Tests for small dataset
-# - Test with no Ibiza
-# - Test with 2 ibiza and Test with different 'name_adep'
-# - Test with 2 ibiza and Test with duplicate 'name_adep'
-# - Test with 'name_ades' og 'name_adep' both Ibiza
+# one flight in the middle of spring
+springTestList = [
+    {'flight_id': '402', 'date': '2022-04-15', 'callsign': 'spring', 'adep': 'AMS', 'name_adep': 'Amsterdam', 'country_code_adep': 'NL', 'ades': 'FCO', 'name_ades': 'Rome', 'country_code_ades': 'IT', 'actual_offblock_time': '2022-04-15T09:00:00Z', 'arrival_time': '2022-04-15T11:30:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '150', 'taxiout_time': '15', 'flown_distance': '800', 'tow': '65000'}
+]
 
-# !!! Flights in Spring !!!
-# - Test for empty flightList
-# - Tests for small dataset
-# - Test with no flight in Spring/wrong dates
-# - Test a normal Date
-# - Test edges
+# two flights on each edge of spring
+springEdgeTestList = [
+    {'flight_id': '403', 'date': '2022-03-20', 'callsign': 'edge1', 'adep': 'OSL', 'name_adep': 'Oslo', 'country_code_adep': 'NO', 'ades': 'BER', 'name_ades': 'Berlin', 'country_code_ades': 'DE', 'actual_offblock_time': '2022-03-20T08:00:00Z', 'arrival_time': '2022-03-20T10:00:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '120', 'taxiout_time': '10', 'flown_distance': '500', 'tow': '62000'},
+    {'flight_id': '404', 'date': '2022-06-21', 'callsign': 'edge2', 'adep': 'VIE', 'name_adep': 'Vienna', 'country_code_adep': 'AT', 'ades': 'ZRH', 'name_ades': 'Zurich', 'country_code_ades': 'CH', 'actual_offblock_time': '2022-06-21T14:00:00Z', 'arrival_time': '2022-06-21T15:30:00Z', 'aircraft_type': 'A320', 'wtc': 'M', 'airline': 'test', 'flight_duration': '90', 'taxiout_time': '10', 'flown_distance': '450', 'tow': '61000'}
+]
 
 def testFunction():
-    assert flights.generateFlightsList([]) == [{}], 'FAILED, generateFlightList run with empty List'
-    
-    assert flights.findFlightsLandingAtCopenhagen(emptyList) == 0, 'FAILED, findFlightsLandingAtCopenhagen run with a empty List'
-    assert flights.findFlightsLandingAtCopenhagen(noCopenhagenTestList) == 0, 'FAILED, findFlightsLandingAtCopenhagen run with no Copenhagen list'
-    assert flights.findFlightsLandingAtCopenhagen(copenhagenTestList)['Total'] == 2, 'FAILED, findFlightsLandingAtCopenhagen run with flight with 2 Copenhagens.'
-    
-    assert flights.findFlightsToIbiza(emptyList) == 0, 'FAILED, findFlightsToIbiza run with a empty List'
-    assert flights.findFlightsToIbiza()
+    assert flights.findFlightsLandingAtCopenhagen(emptyList)['Total'] == 0
+    assert flights.findFlightsLandingAtCopenhagen(generalTestList)['Total'] == 0
+    assert flights.findFlightsLandingAtCopenhagen(twoCopenhagenTestList)['Total'] == 2
+    assert flights.findFlightsLandingAtCopenhagen(twoCopenhagenTestList)['01'] == 1
+    assert flights.findFlightsLandingAtCopenhagen(twoCopenhagenTestList)['04'] == 1
+
+
+    assert flights.findFlightsToIbiza(emptyList) == []
+    assert flights.findFlightsToIbiza(generalTestList) == []
+    assert flights.findFlightsToIbiza(ibizaDifferentAdepTestList) == ['Madrid','Barcelona']
+    assert flights.findFlightsToIbiza(ibizaDuplicateAdepTestList) == ['Madrid']
+
+    assert flights.findFlightsInSpring(emptyList) == 0
+    assert flights.findFlightsInSpring(generalTestList) == 0
+    assert flights.findFlightsInSpring(springTestList) == 1
+    assert flights.findFlightsInSpring(springEdgeTestList)== 2
+
+    print("All tests ran without Issue")
 
 testFunction()

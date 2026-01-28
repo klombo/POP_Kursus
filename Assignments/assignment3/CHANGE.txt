@@ -1,14 +1,20 @@
-[+/-] Test describes the test strategy
-I am missing a bit of a 'why' here. The decisions need to clearer.
-[-] Resume is included and briefly restates the major elements of the report
+To address the feedback 'I am missing a bit of a 'why' here. The decisions need to clearer.'
+    - I added a why parts to the 'Afprøvning' section in my report.
+    - I also changed the actual testTypes function in meetUpExamples.fsx, because of some reflections
 
-To adress the feedback 'You should practice more consistency in your function descriptions.'
+To adress the feedback 'Resume is included and briefly restates the major elements of the report'
+    - I wrote a Resume in the report
+
+To address the feedback 'You should practice more consistency in your function descriptions.'
     - I added labels in the .fs file for the functions that were missing.
     - I also labeled the types on the inputs and outputs which were missing from some of the functions.
 
-To adress the feedback 'I can run 'dotnet run' but I actually can't run meetUpExamples.fsx by itself through dotnet fsi.'
+To address the feedback 'I can run 'dotnet run' but I actually can't run meetUpExamples.fsx by itself through dotnet fsi.'
     - I added #r nuget for both of the libraries, Canvas and simpleGraph, at the top of meetUpExamples.fsx, 
     - this is because when we run meetUpExamples.fsx with dotnet fsi, it doesn't run the .fsproj file which imports both of the libraries.
-    - Needs to be at the top because, when we open the meetUp module it attempts to open the libraries.
+    - Needs to be at the top because, when we open the meetUp module it attempts to open the libraries, so if the imports are after it will cause an error message.
 
-Can you for resub make it easier to test your text-version? Thanks!
+To address the feedback 'Can you for resub make it easier to test your text-version? Thanks!'
+    - I clarified what input and output the function took in the report, in the 'Analyse' section.
+    - I also added printed text to make it clearer what the printend numbers actually meant.
+    - I also moved the entire function into MeetUp.fs, so a potential user of the module wouldn't have to write the function themselves.
