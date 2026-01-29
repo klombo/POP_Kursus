@@ -1,0 +1,16 @@
+To address the feedback "Can you remake this so that it is native types (i.e. list -> int)?":
+    - I changed it so that it is native types in the section 'Question 1.2' in my report.
+
+To address the feedback "Include a simple example in 1.3 :)":
+    - I added examples in the section 'Question 1.3' in my report.
+
+To address the feedback ""The idea is to convert both lists into a, with each unique country list and check that both of the list
+are the same length" -> I don't entirely understand this sentence. Can you tighten for resub?":
+    - I changed the wording of the sentence in section 'Question 1.3' in my report.
+ 
+To address the feedback "You must supply which.":
+    - I added the list of airports where the flights to Ibiza departed from in the section 'Question 2.1' in my report.
+    - I also made clear in my report that the function returns a list of airports.
+
+To address the feedback "I would like an example or two on why OOP is advantageous. Perhaps a case you have worked with?":
+    - I added an example of how i used OOP in coursework in the section 'Question 3.2' in my report.

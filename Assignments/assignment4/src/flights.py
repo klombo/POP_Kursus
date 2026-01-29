@@ -65,7 +65,7 @@ flightList = generateFlightsList("flight_list.csv")
 # print(f'Time to find the flights landing at Copenhagen: {timeToRun2}')
 
 # startTime2 = time.time()
-# print(f'\n Places that to Ibiza: {findFlightsToIbiza(flightList)}')
+# print(f'\n Places that fly to Ibiza: {findFlightsToIbiza(flightList)}')
 # print(f'Amount of airports that fly to Ibiza: {len(findFlightsToIbiza(flightList))}')
 # endTime2 = time.time()
 # timeToRun2 = endTime2 - startTime2
