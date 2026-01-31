@@ -17,39 +17,28 @@ let exampleList: Participant List = [
     Skeptic("Charlie Kirk", 1.0, 0.09, 1.0)
 ]
 
-let SimulationWithNoVisual (listOfParticipants: Participant List) (amountOfRounds:int) =
-    printfn "\n"
-    let getAveragePoliticalView (politicalViews: Participant List): float = 
-        politicalViews 
-        |> List.map (fun person -> match person with
-                                                | person -> person.politicalView)
-        |> List.average
-
-    let printPoliticalView (participantList: Participant List) : unit = 
-        participantList |> List.iter (fun person -> printfn "%s's political view is: %A" person.name person.politicalView)
-        printfn "Average politicalView: %A \n" (getAveragePoliticalView listOfParticipants)
-
-    printPoliticalView listOfParticipants
-
-    for i in 1..amountOfRounds do
-        simulateMeeting listOfParticipants |> ignore
-
-    printPoliticalView listOfParticipants
-
 let testTypes =
     let testList: Participant List = [
-        Normal("Normal", 1.0, 0.2, 0.5)
-        CopyCat ("CopyCat", 0.6, 0.2, 0.5)
-        Skeptic ("Skeptic", 0.2,0.2,0.5)
+        Normal("Normal", 0.50, 0.2, 0.5)
+        CopyCat ("CopyCat", 0.50, 0.2, 0.5)
+        Skeptic ("Skeptic", 0.50,0.2,0.5)
+    ]
+    let testAgainstList : Participant List = [
+        Normal("testCase1", 1.00, 0.2, 0.5)
+        Normal("testCase2", 0.75, 0.2, 0.5)
+        Normal("testCase3", 0.50, 0.2, 0.5)
+        Normal("testCase4", 0.25, 0.2, 0.5)
+        Normal("testCase5", 0.00, 0.2, 0.5)
     ]
     for i in 0..testList.Length-1 do
-        for j in 0..testList.Length-1 do
-            let isAMatch = testList[i].MatchScore (testList[j]) > 0.5
-            testList[i].OnInteraction (testList[j]) isAMatch
+        for j in 0..testAgainstList.Length-1 do
+            let isAMatch = testList[i].MatchScore (testAgainstList[j]) > 0.5
+            testList[i].OnInteraction (testAgainstList[j]) isAMatch
             |> printfn "when %s with politicalView: %A, meets %s with politicalView: %A, then amount moved: %A." 
-                testList[i].name testList[i].politicalView testList[j].name testList[j].politicalView 
+                testList[i].name testList[i].politicalView testAgainstList[j].name testAgainstList[j].politicalView 
+        printfn "\n"
 
 testTypes
-SimulationWithNoVisual exampleList 100
-runSimulation exampleList
+SimulationWithNoVisual exampleList 100000
+// runSimulation exampleList
 

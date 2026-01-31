@@ -275,7 +275,7 @@ let react (state: SimulationState) (ev: Event) : SimulationState option =
         None
 
 // Funktion vi kalder fra meetUpExamples.fsx filen.
-let runSimulation(participantList: Participant List)=
+let runSimulation (participantList: Participant List) =
     let width = 700
     let height = 700
     let interval = (Some 250)
@@ -290,3 +290,24 @@ let runSimulation(participantList: Participant List)=
         buildPicture state midPoint
     
     interact "Graf" width height interval draw react initialState
+
+// Funktion som kører simulation uden noget visuelt et antal gange man selv vælger.
+let SimulationWithNoVisual (listOfParticipants: Participant List) (amountOfRounds:int) =
+    let getAveragePoliticalView (politicalViews: Participant List): float = 
+        politicalViews 
+        |> List.map (fun person -> match person with
+                                                | person -> person.politicalView)
+        |> List.average
+
+    let printPoliticalView (participantList: Participant List) : unit = 
+        printfn "Average politicalView: %A" (getAveragePoliticalView listOfParticipants)
+        participantList |> List.iter (fun person -> printfn "%s's political view is: %A" person.name person.politicalView)
+
+    printfn "\n !!! POLITCAL VIEWS BEFORE SIMULATION !!!"
+    printPoliticalView listOfParticipants
+
+    for i in 1..amountOfRounds do
+        simulateMeeting listOfParticipants |> ignore
+
+    printfn "\n !!! POLITCAL VIEWS AFTER %i SIMULATION STEPS !!!" amountOfRounds
+    printPoliticalView listOfParticipants

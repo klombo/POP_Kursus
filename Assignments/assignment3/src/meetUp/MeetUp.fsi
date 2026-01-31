@@ -55,4 +55,6 @@ val buildPicture: SimulationState -> (float * float) -> Canvas.Picture
 
 val react: state: SimulationState -> ev: Canvas.Event -> SimulationState option
 
-val runSimulation: Participant List -> unit
+val runSimulation: participantList : Participant List -> unit
+
+val SimulationWithNoVisual: listOfParticipants: Participant List -> amountOfRounds int -> unit 

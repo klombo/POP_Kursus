@@ -1,45 +1,23 @@
 import colouring
 
-# Neighbour List errors:
-# - 
+def runNeighbourTests(neighbourLists):
+    for name, neighbourList in neighbourLists:
+        test = colouring.NeighbourRelation(neighbourList)
+        test.makeColouring()
 
-# Simple test
-simple = [("da", "se"), ("no", "da"), ("se", "no"), ("de", "da")]
-simpleTest = colouring.NeighbourRelation(simple)
-simpleTest.makeColouring()
-print(simpleTest)
-print(simpleTest.checkAmountOfUniqueCountries())
-print(simpleTest.checkIfNeighboursAreSameColour())
+        print(f"\nTest: {name}")
+        print(test)
+        print("All of the countries are present:", test.checkAmountOfUniqueCountries())
+        print("No Neighbours are same Colour:", test.checkIfNeighboursAreSameColour())
 
-# Empty List test
-emptyList = []
-emptyTest = colouring.NeighbourRelation(emptyList)
-emptyTest.makeColouring()
-print(f'Test for Empty List: {emptyTest}')
-print(emptyTest.checkAmountOfUniqueCountries()) 
-print(emptyTest.checkIfNeighboursAreSameColour()) 
 
-# All Neighbours Test
-allNeighboursList = [("da","se"), ("no","da"), ("se","no")]
-allNeighbourTest = colouring.NeighbourRelation(allNeighboursList)
-allNeighbourTest.makeColouring()
-print(f'Test for where all Neighbour List: {allNeighbourTest}') 
-print(allNeighbourTest.checkAmountOfUniqueCountries()) 
-print(allNeighbourTest.checkIfNeighboursAreSameColour()) 
+# All test cases in one list
+neighbourLists = [
+    ("Simple List", [("da", "se"), ("no", "da"), ("se", "no"), ("de", "da")]),
+    ("Empty List", []),
+    ("All Neighbours List", [("da","se"), ("no","da"), ("se","no")]),
+    ("Neighbour Pairs List", [("nl","de"),("br","ar"),("cn","vn")]),
+    ("No Neighbours List", [("nl",'00'),("00",'br'),("cn",'00')])
+]
 
-# Pair Neighbours Test
-twoNeighbourList = [("nl","de"),("br","ar"),("cn","vn")]
-twoNeighbourTest = colouring.NeighbourRelation(twoNeighbourList)
-twoNeighbourTest.makeColouring()
-print(f'Test for list with only two neighbour List: {twoNeighbourTest}')
-print(twoNeighbourTest.checkAmountOfUniqueCountries())
-print(twoNeighbourTest.checkIfNeighboursAreSameColour())
-
-# No Neighbours Test
-noNeighbourList = [("nl",'00'),("br",'00'),("cn",'00')]
-noNeighbourTest = colouring.NeighbourRelation(noNeighbourList)
-noNeighbourTest.makeColouring()
-print(f'Test for list with no Neighbours: {noNeighbourTest}')
-print(noNeighbourTest.checkAmountOfUniqueCountries())
-print(noNeighbourTest.checkIfNeighboursAreSameColour())
-
+runNeighbourTests(neighbourLists)
