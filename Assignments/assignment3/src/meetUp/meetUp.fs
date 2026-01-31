@@ -119,7 +119,7 @@ let createEdgeMatrix(participantList: Participant List) : (Participant* Particip
     edgeMatrix
 
 // Funktion der laver grafen med forbindelserne mellem de forskellige personer.
-let createGraph (participants: Participant List) (connections: (Participant * Participant * bool) array) : Graph<Participant> =
+let createGraph (participants: Participant List) : Graph<Participant> =
     let emptyGraph : Graph<Participant> = empty
     
     let participantGraphOnlyVertices =
@@ -127,7 +127,7 @@ let createGraph (participants: Participant List) (connections: (Participant * Pa
         |> List.fold (fun g v -> addVertex v g) emptyGraph
 
     let completeParticipantGraph =
-        connections
+        createEdgeMatrix participants
         |> Array.fold (fun g (u, v, x) ->
             if x then addEdge u v g
             else g

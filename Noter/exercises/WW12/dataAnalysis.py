@@ -13,8 +13,6 @@ llist = [e.split(',') for e in l]
 #res = {f"{ele[0] + ele[1]}": [ele[1:]] for ele in llist}
 #keyList = [f"{ele[0]+ele[1]}" for ele in llist]
 #print(keyList)
-
-
         
 def splitByDate(lines):
     res = {}
@@ -27,3 +25,17 @@ def splitByDate(lines):
 
 print(splitByDate(llist))
 #print(llist)
+
+def findFlightsLandingAtCopenhagen(flightList):
+    flightByMonth = {}
+    total = 0
+    for month in range(1,13):
+        numberOfFlights = 0
+        for flight in flightList:
+            date = flight['date'].split('-')
+            if int(date[1]) == month and flight['name_ades'] == 'Copenhagen':
+                numberOfFlights += 1
+        flightByMonth[month] = numberOfFlights
+        total += numberOfFlights
+    flightByMonth['total'] = total
+    return flightByMonth

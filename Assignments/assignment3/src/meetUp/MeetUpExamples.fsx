@@ -1,6 +1,5 @@
 #r "nuget:DIKU.Graph, 1.0.0"
 #r "nuget:DIKU.Canvas"
-
 #load "MeetUp.fs"
 
 open MeetUp
@@ -53,6 +52,4 @@ let testTypes =
 testTypes
 SimulationWithNoVisual exampleList 100
 runSimulation exampleList
-
-
 

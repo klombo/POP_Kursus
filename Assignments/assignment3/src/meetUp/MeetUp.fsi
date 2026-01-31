@@ -37,7 +37,7 @@ val simulateMeeting: participantList: List<Participant> -> (Participant * Partic
 
 val createEdgeMatrix: participantList: List<Participant> -> (Participant * Participant * bool) array
 
-val createGraph: participants: List<Participant> -> connections: (Participant * Participant * bool) array -> simpleGraph.Graph<Participant>
+val createGraph: participants: List<Participant> -> simpleGraph.Graph<Participant>
 
 val outerRadius: float
 
